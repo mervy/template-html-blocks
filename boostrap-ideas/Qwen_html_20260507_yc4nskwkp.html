@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        /* Apenas ajustes mínimos de layout */
+        .sidebar {
+            min-height: 100vh;
+            width: 280px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .main-content {
+            margin-left: 280px;
+            transition: margin-left 0.3s ease-in-out;
+        }
+        
+        @media (max-width: 992px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+            }
+        }
+        
+        .nav-link.active {
+            background-color: rgba(255,255,255,0.1);
+            border-left: 3px solid #0d6efd;
+        }
+    </style>
+</head>
+<body class="bg-dark">
+
+    <!-- Sidebar -->
+    <nav class="sidebar bg-dark border-end border-secondary" id="sidebar">
+        <div class="d-flex flex-column h-100">
+            <!-- Logo -->
+            <div class="d-flex align-items-center justify-content-between p-3 border-bottom border-secondary">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-bootstrap-fill text-primary fs-3"></i>
+                    <span class="fs-5 fw-bold">AdminBS</span>
+                </div>
+                <button class="btn btn-link text-secondary d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+            <!-- Menu -->
+            <div class="flex-grow-1 overflow-auto py-3">
+                <ul class="nav flex-column px-2">
+                    <li class="nav-item mb-1">
+                        <a class="nav-link active text-white d-flex align-items-center gap-3 px-3 py-2 rounded" href="#">
+                            <i class="bi bi-speedometer2 fs-5"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link text-secondary d-flex align-items-center gap-3 px-3 py-2 rounded" href="#">
+                            <i class="bi bi-people fs-5"></i>
+                            <span>Usuários</span>
+                            <span class="badge bg-primary ms-auto">12</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link text-secondary d-flex align-items-center gap-3 px-3 py-2 rounded" href="#">
+                            <i class="bi bi-cart fs-5"></i>
+                            <span>Pedidos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link text-secondary d-flex align-items-center gap-3 px-3 py-2 rounded" href="#">
+                            <i class="bi bi-graph-up fs-5"></i>
+                            <span>Relatórios</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link text-secondary d-flex align-items-center gap-3 px-3 py-2 rounded" href="#">
+                            <i class="bi bi-wallet2 fs-5"></i>
+                            <span>Financeiro</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item mt-4 mb-2 px-3">
+                        <small class="text-secondary text-uppercase fw-bold" style="font-size: 0.75rem;">Configurações</small>
+                    </li>
+                    
+                    <li class="nav-item mb-1">
+                        <a class="nav-link text-secondary d-flex align-items-center gap-3 px-3 py-2 rounded" href="#">
+                            <i class="bi bi-gear fs-5"></i>
+                            <span>Geral</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link text-secondary d-flex align-items-center gap-3 px-3 py-2 rounded" href="#">
+                            <i class="bi bi-shield-lock fs-5"></i>
+                            <span>Segurança</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- User Profile -->
+            <div class="p-3 border-top border-secondary">
+                <div class="d-flex align-items-center gap-3">
+                    <img src="https://picsum.photos/seed/user/40/40.jpg" class="rounded-circle" alt="User" width="40" height="40">
+                    <div class="flex-grow-1">
+                        <div class="fw-semibold">João Silva</div>
+                        <div class="small text-secondary">Admin</div>
+                    </div>
+                    <button class="btn btn-link text-secondary" data-bs-toggle="dropdown">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Perfil</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Configurações</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i>Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Navbar -->
+        <nav class="navbar navbar-dark bg-dark border-bottom border-secondary sticky-top">
+            <div class="container-fluid px-4">
+                <button class="btn btn-link text-secondary d-lg-none" id="sidebarToggle">
+                    <i class="bi bi-list fs-4"></i>
+                </button>
+                
+                <form class="d-none d-md-flex flex-grow-1 mx-4" style="max-width: 400px;">
+                    <div class="input-group">
+                        <span class="input-group-text bg-dark border-secondary text-secondary">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input type="text" class="form-control bg-dark border-secondary text-light" placeholder="Buscar...">
+                    </div>
+                </form>
+
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link text-secondary position-relative">
+                        <i class="bi bi-bell fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            3
+                        </span>
+                    </button>
+                    <button class="btn btn-link text-secondary position-relative">
+                        <i class="bi bi-envelope fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+                            5
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Dashboard Content -->
+        <div class="p-4">
+            <!-- Page Title -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h1 class="h3 mb-1">Dashboard</h1>
+                    <p class="text-secondary mb-0">Bem-vindo de volta! Aqui está o resumo.</p>
+                </div>
+                <button class="btn btn-primary">
+                    <i class="bi bi-plus-lg me-2"></i>Novo Relatório
+                </button>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <p class="text-secondary mb-1">Total de Vendas</p>
+                                    <h3 class="mb-2">R$ 45.231</h3>
+                                    <span class="text-success small">
+                                        <i class="bi bi-arrow-up"></i> 12.5%
+                                    </span>
+                                    <span class="text-secondary small">vs mês anterior</span>
+                                </div>
+                                <div class="p-2 bg-primary bg-opacity-10 rounded">
+                                    <i class="bi bi-currency-dollar text-primary fs-4"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <p class="text-secondary mb-1">Novos Usuários</p>
+                                    <h3 class="mb-2">1,234</h3>
+                                    <span class="text-success small">
+                                        <i class="bi bi-arrow-up"></i> 8.2%
+                                    </span>
+                                    <span class="text-secondary small">vs mês anterior</span>
+                                </div>
+                                <div class="p-2 bg-success bg-opacity-10 rounded">
+                                    <i class="bi bi-people text-success fs-4"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <p class="text-secondary mb-1">Pedidos</p>
+                                    <h3 class="mb-2">356</h3>
+                                    <span class="text-danger small">
+                                        <i class="bi bi-arrow-down"></i> 3.1%
+                                    </span>
+                                    <span class="text-secondary small">vs mês anterior</span>
+                                </div>
+                                <div class="p-2 bg-warning bg-opacity-10 rounded">
+                                    <i class="bi bi-cart text-warning fs-4"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <p class="text-secondary mb-1">Taxa de Conversão</p>
+                                    <h3 class="mb-2">3.24%</h3>
+                                    <span class="text-success small">
+                                        <i class="bi bi-arrow-up"></i> 2.4%
+                                    </span>
+                                    <span class="text-secondary small">vs mês anterior</span>
+                                </div>
+                                <div class="p-2 bg-info bg-opacity-10 rounded">
+                                    <i class="bi bi-graph-up text-info fs-4"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="row g-4 mb-4">
+                <div class="col-lg-8">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-header bg-transparent border-secondary d-flex justify-content-between align-items-center py-3">
+                            <h5 class="mb-0">Visão Geral de Vendas</h5>
+                            <select class="form-select form-select-sm bg-dark border-secondary text-light w-auto">
+                                <option>Últimos 7 dias</option>
+                                <option>Últimos 30 dias</option>
+                                <option>Este ano</option>
+                            </select>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="salesChart" height="120"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-header bg-transparent border-secondary py-3">
+                            <h5 class="mb-0">Distribuição</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="pieChart" height="200"></canvas>
+                        </div>
+                        <div class="card-footer bg-transparent border-secondary">
+                            <div class="d-flex justify-content-around text-center">
+                                <div>
+                                    <div class="text-primary fw-bold">45%</div>
+                                    <small class="text-secondary">Direto</small>
+                                </div>
+                                <div>
+                                    <div class="text-success fw-bold">30%</div>
+                                    <small class="text-secondary">Orgânico</small>
+                                </div>
+                                <div>
+                                    <div class="text-warning fw-bold">25%</div>
+                                    <small class="text-secondary">Social</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table Row -->
+            <div class="card bg-dark border-secondary">
+                <div class="card-header bg-transparent border-secondary d-flex justify-content-between align-items-center py-3">
+                    <h5 class="mb-0">Pedidos Recentes</h5>
+                    <button class="btn btn-sm btn-outline-primary">Ver Todos</button>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover mb-0 align-middle">
+                            <thead class="border-secondary">
+                                <tr>
+                                    <th class="ps-4">Pedido</th>
+                                    <th>Cliente</th>
+                                    <th>Produto</th>
+                                    <th>Valor</th>
+                                    <th>Status</th>
+                                    <th>Data</th>
+                                    <th class="text-end pe-4">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ps-4 fw-semibold">#ORD-001</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="https://picsum.photos/seed/user1/32/32.jpg" class="rounded-circle" width="32">
+                                            <span>Maria Santos</span>
+                                        </div>
+                                    </td>
+                                    <td>Notebook Pro X1</td>
+                                    <td>R$ 5.499,00</td>
+                                    <td><span class="badge bg-success bg-opacity-25 text-success">Concluído</span></td>
+                                    <td>08/05/2026</td>
+                                    <td class="text-end pe-4">
+                                        <button class="btn btn-sm btn-link text-secondary"><i class="bi bi-eye"></i></button>
+                                        <button class="btn btn-sm btn-link text-secondary"><i class="bi bi-pencil"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-semibold">#ORD-002</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="https://picsum.photos/seed/user2/32/32.jpg" class="rounded-circle" width="32">
+                                            <span>Pedro Oliveira</span>
+                                        </div>
+                                    </td>
+                                    <td>Mouse Sem Fio</td>
+                                    <td>R$ 149,90</td>
+                                    <td><span class="badge bg-warning bg-opacity-25 text-warning">Pendente</span></td>
+                                    <td>08/05/2026</td>
+                                    <td class="text-end pe-4">
+                                        <button class="btn btn-sm btn-link text-secondary"><i class="bi bi-eye"></i></button>
+                                        <button class="btn btn-sm btn-link text-secondary"><i class="bi bi-pencil"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-semibold">#ORD-003</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="https://picsum.photos/seed/user3/32/32.jpg" class="rounded-circle" width="32">
+                                            <span>Ana Costa</span>
+                                        </div>
+                                    </td>
+                                    <td>Teclado Mecânico</td>
+                                    <td>R$ 399,00</td>
+                                    <td><span class="badge bg-info bg-opacity-25 text-info">Enviado</span></td>
+                                    <td>07/05/2026</td>
+                                    <td class="text-end pe-4">
+                                        <button class="btn btn-sm btn-link text-secondary"><i class="bi bi-eye"></i></button>
+                                        <button class="btn btn-sm btn-link text-secondary"><i class="bi bi-pencil"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-semibold">#ORD-004</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="https://picsum.photos/seed/user4/32/32.jpg" class="rounded-circle" width="32">
+                                            <span>Carlos Lima</span>
+                                        </div>
+                                    </td>
+                                    <td>Monitor 27" 4K</td>
+                                    <td>R$ 2.199,00</td>
+                                    <td><span class="badge bg-danger bg-opacity-25 text-danger">Cancelado</span></td>
+                                    <td>07/05/2026</td>
+                                    <td class="text-end pe-4">
+                                        <button class="btn btn-sm btn-link text-secondary"><i class="bi bi-eye"></i></button>
+                                        <button class="btn btn-sm btn-link text-secondary"><i class="bi bi-pencil"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Dashboard Scripts -->
+    <script>
+        // Toggle Sidebar em Mobile
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('show');
+        });
+
+        // Fechar sidebar ao clicar fora em mobile
+        document.addEventListener('click', function(e) {
+            const sidebar = document.getElementById('sidebar');
+            const toggle = document.getElementById('sidebarToggle');
+            
+            if (window.innerWidth < 992) {
+                if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+                    sidebar.classList.remove('show');
+                }
+            }
+        });
+
+        // Chart.js - Gráfico de Vendas
+        const salesCtx = document.getElementById('salesChart').getContext('2d');
+        new Chart(salesCtx, {
+            type: 'line',
+            data: {
+                labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+                datasets: [{
+                    label: 'Vendas',
+                    data: [12000, 19000, 15000, 25000, 22000, 30000, 28000],
+                    borderColor: '#0d6efd',
+                    backgroundColor: 'rgba(13, 110, 253, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return 'R$ ' + value.toLocaleString();
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart.js - Gráfico de Pizza
+        const pieCtx = document.getElementById('pieChart').getContext('2d');
+        new Chart(pieCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Direto', 'Orgânico', 'Social'],
+                datasets: [{
+                    data: [45, 30, 25],
+                    backgroundColor: [
+                        '#0d6efd',
+                        '#198754',
+                        '#ffc107'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            usePointStyle: true
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

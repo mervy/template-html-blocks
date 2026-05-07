@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Blog com layout Bootstrap, formulário de newsletter no rodapé e lista de últimos vistos na barra lateral." />
+    <meta name="author" content="" />
+    <title>Blog Home - Newsletter e Últimos Vistos</title>
+    <!-- Favicon (placeholder) -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text x='0' y='14'>📰</text></svg>" />
+    <!-- Bootstrap 5 CSS (only framework) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- No custom CSS - apenas Bootstrap -->
+</head>
+<body>
+
+    <!-- Navbar responsiva (mantida original) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#!">Start Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cabeçalho da página -->
+    <header class="py-5 bg-light border-bottom mb-4">
+        <div class="container">
+            <div class="text-center my-5">
+                <h1 class="fw-bolder">Welcome to Blog Home!</h1>
+                <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+        <div class="row">
+            <!-- Coluna de artigos do blog (8 colunas) -->
+            <div class="col-lg-8">
+                <!-- Postagem em destaque -->
+                <div class="card mb-4">
+                    <a href="#!"><img class="card-img-top" src="https://picsum.photos/id/1015/850/350" alt="Paisagem montanhosa - imagem do artigo em destaque" /></a>
+                    <div class="card-body">
+                        <div class="small text-muted">January 1, 2023</div>
+                        <h2 class="card-title">Featured Post Title</h2>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+                        <a class="btn btn-primary" href="#!">Read more →</a>
+                    </div>
+                </div>
+                <!-- Grid de posts menores (2 colunas) -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- Post 1 -->
+                        <div class="card mb-4">
+                            <a href="#!"><img class="card-img-top" src="https://picsum.photos/id/104/700/350" alt="Cachorro fofo - imagem ilustrativa" /></a>
+                            <div class="card-body">
+                                <div class="small text-muted">January 1, 2023</div>
+                                <h2 class="card-title h4">Post Title</h2>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                <a class="btn btn-primary" href="#!">Read more →</a>
+                            </div>
+                        </div>
+                        <!-- Post 2 -->
+                        <div class="card mb-4">
+                            <a href="#!"><img class="card-img-top" src="https://picsum.photos/id/21/700/350" alt="Cachoeira com vegetação" /></a>
+                            <div class="card-body">
+                                <div class="small text-muted">January 1, 2023</div>
+                                <h2 class="card-title h4">Post Title</h2>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                <a class="btn btn-primary" href="#!">Read more →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Post 3 -->
+                        <div class="card mb-4">
+                            <a href="#!"><img class="card-img-top" src="https://picsum.photos/id/155/700/350" alt="Barcos no cais" /></a>
+                            <div class="card-body">
+                                <div class="small text-muted">January 1, 2023</div>
+                                <h2 class="card-title h4">Post Title</h2>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                <a class="btn btn-primary" href="#!">Read more →</a>
+                            </div>
+                        </div>
+                        <!-- Post 4 -->
+                        <div class="card mb-4">
+                            <a href="#!"><img class="card-img-top" src="https://picsum.photos/id/169/700/350" alt="Pôr do sol na estrada" /></a>
+                            <div class="card-body">
+                                <div class="small text-muted">January 1, 2023</div>
+                                <h2 class="card-title h4">Post Title</h2>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
+                                <a class="btn btn-primary" href="#!">Read more →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Paginação (mantida) -->
+                <nav aria-label="Pagination">
+                    <hr class="my-0" />
+                    <ul class="pagination justify-content-center my-4">
+                        <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Newer</a></li>
+                        <li class="page-item active" aria-current="page"><a class="page-link" href="#!">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#!">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#!">3</a></li>
+                        <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
+                        <li class="page-item"><a class="page-link" href="#!">15</a></li>
+                        <li class="page-item"><a class="page-link" href="#!">Older</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- SIDEBAR (lateral direita) - removidos os widgets antigos (Search, Categories, Side Widget) -->
+            <!-- Aqui apenas o componente "Últimos Vistos" com listagem de 5 artigos -->
+            <div class="col-lg-4">
+                <!-- Card "Últimos Vistos" com lista de 5 artigos -->
+                <div class="card mb-4 shadow-sm border-0 rounded-3">
+                    <div class="card-header bg-white fw-bold fs-5 border-bottom">
+                        📌 Últimos Vistos
+                    </div>
+                    <div class="card-body p-0">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="#" class="text-decoration-none text-dark fw-semibold">▸ Como criar layouts responsivos com Bootstrap 5</a>
+                                <span class="badge bg-secondary rounded-pill">1h</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="#" class="text-decoration-none text-dark fw-semibold">▸ Guia completo: HTML semântico e acessibilidade</a>
+                                <span class="badge bg-secondary rounded-pill">3h</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="#" class="text-decoration-none text-dark fw-semibold">▸ CSS Grid vs Flexbox: quando usar cada técnica</a>
+                                <span class="badge bg-secondary rounded-pill">5h</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="#" class="text-decoration-none text-dark fw-semibold">▸ JavaScript assíncrono: promises e async/await</a>
+                                <span class="badge bg-secondary rounded-pill">ontem</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="#" class="text-decoration-none text-dark fw-semibold">▸ Otimização de imagens para web (Lazy loading e WebP)</a>
+                                <span class="badge bg-secondary rounded-pill">2 dias</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent text-muted small border-top">
+                        📖 Artigos que você visualizou recentemente
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ com formulário de newsletter (input e botão) -->
+    <footer class="py-5 bg-dark text-white">
+        <div class="container">
+            <!-- Linha do newsletter - input group centralizado -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8 col-lg-6 text-center">
+                    <h5 class="fw-bold mb-3">📧 Receba novidades exclusivas</h5>
+                    <p class="text-white-50 small mb-3">Inscreva-se na nossa newsletter e receba os melhores artigos, dicas de desenvolvimento e tendências diretamente no seu e-mail.</p>
+                    <form class="row g-2 justify-content-center" onsubmit="event.preventDefault(); alert('Obrigado por se inscrever! (demonstração)'); this.reset();">
+                        <div class="col-auto flex-grow-1" style="min-width: 180px;">
+                            <label for="newsletterEmail" class="visually-hidden">Endereço de e-mail</label>
+                            <input type="email" class="form-control form-control-lg" id="newsletterEmail" placeholder="seuemail@exemplo.com" required>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary btn-lg px-4">Assinar</button>
+                        </div>
+                    </form>
+                    <small class="text-white-50 mt-3 d-block">Sem spam, cancele a qualquer momento.</small>
+                </div>
+            </div>
+            <!-- Linha de copyright (separador e direitos) -->
+            <hr class="my-4 bg-secondary opacity-25">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="m-0 small text-white-50">Copyright &copy; Your Website 2023. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS bundle (para funcionar toggler e componentes interativos) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Nenhum script customizado adicional -->
+</body>
+</html>
