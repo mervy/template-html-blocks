@@ -1,0 +1,99 @@
+<!-- {{TITLE}} = "Usuários" | {{ACTIVE_USERS}} = "active bg-white text-success fw-medium" -->
+
+<div class="p-4 p-lg-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2 class="fw-bold mb-1 text-dark">👥 Usuários</h2>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="dash-home.html" class="text-decoration-none text-muted">Dashboard</a></li>
+          <li class="breadcrumb-item active text-success">Usuários</li>
+        </ol>
+      </nav>
+    </div>
+    <a href="dash-insert-user.html" class="btn btn-success">
+      <i class="bi bi-person-plus me-2"></i>Novo Usuário
+    </a>
+  </div>
+
+  <!-- Filtros -->
+  <div class="card border-0 shadow-sm mb-4">
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <input type="search" class="form-control" placeholder="Buscar por nome ou e-mail...">
+        </div>
+        <div class="col-md-3">
+          <select class="form-select">
+            <option>Todos os papéis</option>
+            <option>Admin</option>
+            <option>Editor</option>
+            <option>Autor</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-outline-success w-100">Filtrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabela -->
+  <div class="card border-0 shadow-sm">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0">
+        <thead class="bg-light">
+          <tr>
+            <th class="ps-4">Usuário</th>
+            <th>E-mail</th>
+            <th>Papel</th>
+            <th>Artigos</th>
+            <th>Cadastro</th>
+            <th>Status</th>
+            <th class="text-end pe-4">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ps-4">
+              <div class="d-flex align-items-center gap-3">
+                <div class="bg-success-subtle rounded-circle d-flex align-items-center justify-content-center border" style="width:40px;height:40px;">
+                  <i class="bi bi-person-fill text-success"></i>
+                </div>
+                <span class="fw-medium text-dark">Maria Silva</span>
+              </div>
+            </td>
+            <td class="text-dark">maria@email.com</td>
+            <td><span class="badge bg-success-subtle text-success">Admin</span></td>
+            <td>42</td>
+            <td>12 Jan, 2024</td>
+            <td><span class="badge bg-success-subtle text-success">Ativo</span></td>
+            <td class="text-end pe-4">
+              <a href="dash-insert-user.html" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a>
+              <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td class="ps-4">
+              <div class="d-flex align-items-center gap-3">
+                <div class="bg-info-subtle rounded-circle d-flex align-items-center justify-content-center border" style="width:40px;height:40px;">
+                  <i class="bi bi-person-fill text-info"></i>
+                </div>
+                <span class="fw-medium text-dark">João Santos</span>
+              </div>
+            </td>
+            <td class="text-dark">joao@email.com</td>
+            <td><span class="badge bg-primary-subtle text-primary">Editor</span></td>
+            <td>18</td>
+            <td>03 Mar, 2024</td>
+            <td><span class="badge bg-success-subtle text-success">Ativo</span></td>
+            <td class="text-end pe-4">
+              <a href="dash-insert-user.html" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a>
+              <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

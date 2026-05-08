@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Tech • Artigos & Inovação</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- 🔍 Navbar com Search -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info bg-gradient shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <i class="bi bi-journal-code me-2"></i>Blog<span class="text-white-50">Tech</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active fw-medium" href="home.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="artigos.html">Artigos</a></li>
+		  <li class="nav-item"><a class="nav-link fw-medium" href="post.html">Post</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="categorias.html">Categorias</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="sobre.html">Sobre</a></li>
+		  <li class="nav-item"><a class="nav-link fw-medium" href="contato.html">Contato</a></li>
+		  <li class="nav-item"><a class="nav-link fw-medium" href="login.html">Login</a></li>
+        </ul>
+        
+        <form class="d-flex" role="search">
+          <input class="form-control form-control-sm me-2 border-0" type="search" placeholder="🔍 Buscar artigos..." aria-label="Search">
+          <button class="btn btn-light btn-sm text-info fw-medium" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🦸 Hero Section Moderna -->
+  <header class="py-5 bg-light border-bottom">
+    <div class="container px-5">
+      <div class="row gx-5 align-items-center">
+        <div class="col-lg-6">
+          <span class="badge bg-primary bg-gradient text-white mb-3 px-3 py-2">
+            <i class="bi bi-stars me-1"></i> Novo
+          </span>
+          <h1 class="display-5 fw-bold text-dark lh-1 mb-3">
+            Conteúdo que <span class="text-primary">inspira</span> e <span class="text-info">transforma</span>
+          </h1>
+          <p class="lead text-muted mb-4">
+            Explore artigos sobre tecnologia, desenvolvimento, design e inovação. 
+            Tudo em um só lugar, atualizado semanalmente para você.
+          </p>
+          <div class="d-grid gap-3 d-sm-flex">
+            <a class="btn btn-primary btn-lg px-4" href="#">
+              <i class="bi bi-journal-plus me-2"></i>Ler Agora
+            </a>
+            <a class="btn btn-outline-info btn-lg px-4" href="#">
+              <i class="bi bi-grid-3x3-gap me-2"></i>Explorar
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <div class="position-relative">
+            <div class="bg-primary bg-gradient rounded-4 shadow-lg p-4" style="min-height: 280px;">
+              <i class="bi bi-laptop display-1 text-white opacity-75"></i>
+            </div>
+            <div class="position-absolute top-0 start-100 translate-middle-x d-none d-lg-block">
+              <div class="bg-info bg-gradient rounded-4 shadow p-3" style="min-height: 200px; min-width: 180px;">
+                <i class="bi bi-code-slash display-6 text-white opacity-75"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ⭐ Post em Destaque -->
+  <section class="py-5">
+    <div class="container px-5">
+      <div class="card mb-5 border-0 shadow-sm overflow-hidden">
+        <div class="row g-0">
+          <div class="col-md-6">
+            <div class="bg-primary bg-gradient h-100 d-flex align-items-center justify-content-center" style="min-height: 300px;">
+              <i class="bi bi-rocket-takeoff display-1 text-white opacity-50"></i>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card-body p-4 p-lg-5">
+              <span class="badge bg-success bg-gradient text-white mb-3">🔥 Destaque</span>
+              <h2 class="card-title fw-bold mb-3">Como criar aplicações modernas com Bootstrap 5</h2>
+              <p class="card-text text-muted mb-4">
+                Descubra as melhores práticas, componentes avançados e truques para construir 
+                interfaces profissionais usando apenas o poder do Bootstrap.
+              </p>
+              <div class="d-flex align-items-center">
+                <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                  <i class="bi bi-person-fill text-white"></i>
+                </div>
+                <div>
+                  <div class="fw-bold">Maria Silva</div>
+                  <small class="text-muted"><i class="bi bi-calendar-event me-1"></i> 18 Mai, 2024 • 7 min de leitura</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📰 Grid de Artigos (Estilo Blog Album) -->
+  <section class="py-5 bg-light">
+    <div class="container px-5">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold mb-0">Últimos Artigos</h2>
+        <a href="#" class="btn btn-outline-primary btn-sm">Ver todos <i class="bi bi-arrow-right"></i></a>
+      </div>
+      
+      <div class="row gx-4 gx-lg-5">
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="bg-info bg-gradient" style="height: 180px;">
+              <i class="bi bi-cpu display-4 text-white position-absolute top-50 start-50 translate-middle opacity-50"></i>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-info bg-gradient text-white mb-2">IA & Dados</span>
+              <h5 class="card-title fw-bold">Inteligência Artificial no Dia a Dia</h5>
+              <p class="card-text text-muted small">Como as ferramentas de IA estão transformando a produtividade.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <small class="text-muted"><i class="bi bi-clock me-1"></i> 5 min</small>
+                <a href="#" class="btn btn-sm btn-outline-primary">Ler</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="bg-success bg-gradient" style="height: 180px;">
+              <i class="bi bi-palette display-4 text-white position-absolute top-50 start-50 translate-middle opacity-50"></i>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-success bg-gradient text-white mb-2">Design</span>
+              <h5 class="card-title fw-bold">UI/UX: Tendências 2024</h5>
+              <p class="card-text text-muted small">O que está em alta no design de interfaces modernas.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <small class="text-muted"><i class="bi bi-clock me-1"></i> 6 min</small>
+                <a href="#" class="btn btn-sm btn-outline-primary">Ler</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="bg-warning bg-gradient" style="height: 180px;">
+              <i class="bi bi-lightning-charge display-4 text-dark position-absolute top-50 start-50 translate-middle opacity-50"></i>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-warning bg-gradient text-dark mb-2">DevOps</span>
+              <h5 class="card-title fw-bold">Deploy Rápido com Docker</h5>
+              <p class="card-text text-muted small">Guia prático para containerizar suas aplicações.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <small class="text-muted"><i class="bi bi-clock me-1"></i> 8 min</small>
+                <a href="#" class="btn btn-sm btn-outline-primary">Ler</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="bg-danger bg-gradient" style="height: 180px;">
+              <i class="bi bi-shield-check display-4 text-white position-absolute top-50 start-50 translate-middle opacity-50"></i>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-danger bg-gradient text-white mb-2">Segurança</span>
+              <h5 class="card-title fw-bold">Boas Práticas em APIs</h5>
+              <p class="card-text text-muted small">Proteja suas APIs com autenticação e rate limiting.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <small class="text-muted"><i class="bi bi-clock me-1"></i> 7 min</small>
+                <a href="#" class="btn btn-sm btn-outline-primary">Ler</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="bg-secondary bg-gradient" style="height: 180px;">
+              <i class="bi bi-people display-4 text-white position-absolute top-50 start-50 translate-middle opacity-50"></i>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-secondary bg-gradient text-white mb-2">Carreira</span>
+              <h5 class="card-title fw-bold">Crescendo na Área Tech</h5>
+              <p class="card-text text-muted small">Dicas para evoluir profissionalmente no mercado de tecnologia.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <small class="text-muted"><i class="bi bi-clock me-1"></i> 6 min</small>
+                <a href="#" class="btn btn-sm btn-outline-primary">Ler</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="bg-primary bg-gradient" style="height: 180px;">
+              <i class="bi bi-book display-4 text-white position-absolute top-50 start-50 translate-middle opacity-50"></i>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-primary bg-gradient text-white mb-2">Tutoriais</span>
+              <h5 class="card-title fw-bold">Bootstrap do Zero ao Avançado</h5>
+              <p class="card-text text-muted small">Série completa para dominar o framework mais popular.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <small class="text-muted"><i class="bi bi-clock me-1"></i> 10 min</small>
+                <a href="#" class="btn btn-sm btn-outline-primary">Ler</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paginação -->
+      <nav class="mt-5">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled"><a class="page-link border-0" href="#"><i class="bi bi-chevron-left"></i></a></li>
+          <li class="page-item active"><a class="page-link bg-primary border-0" href="#">1</a></li>
+          <li class="page-item"><a class="page-link border-0 text-dark" href="#">2</a></li>
+          <li class="page-item"><a class="page-link border-0 text-dark" href="#">3</a></li>
+          <li class="page-item"><a class="page-link border-0 text-dark" href="#"><i class="bi bi-chevron-right"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 📬 Footer com Newsletter + Redes Sociais -->
+  <footer class="bg-dark text-white mt-auto">
+    <div class="container px-5 py-5">
+      <div class="row gx-5">
+        <!-- Brand + Social -->
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h5 class="fw-bold mb-3">
+            <i class="bi bi-journal-code me-2"></i>Blog<span class="text-info">Tech</span>
+          </h5>
+          <p class="text-white-50 mb-4">
+            Seu hub de conteúdo sobre tecnologia, inovação e desenvolvimento. 
+            Artigos semanais para manter você atualizado.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white text-decoration-none hover-primary">
+              <i class="bi bi-facebook fs-5"></i>
+            </a>
+            <a href="#" class="text-white text-decoration-none hover-primary">
+              <i class="bi bi-twitter-x fs-5"></i>
+            </a>
+            <a href="#" class="text-white text-decoration-none hover-primary">
+              <i class="bi bi-instagram fs-5"></i>
+            </a>
+            <a href="#" class="text-white text-decoration-none hover-primary">
+              <i class="bi bi-linkedin fs-5"></i>
+            </a>
+            <a href="#" class="text-white text-decoration-none hover-primary">
+              <i class="bi bi-github fs-5"></i>
+            </a>
+            <a href="#" class="text-white text-decoration-none hover-primary">
+              <i class="bi bi-youtube fs-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h5 class="fw-bold mb-3">Navegação</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="#" class="text-white-50 text-decoration-none">
+                <i class="bi bi-chevron-right me-2 text-info"></i>Sobre Nós
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-white-50 text-decoration-none">
+                <i class="bi bi-chevron-right me-2 text-info"></i>Contato
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-white-50 text-decoration-none">
+                <i class="bi bi-chevron-right me-2 text-info"></i>Política de Privacidade
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-white-50 text-decoration-none">
+                <i class="bi bi-chevron-right me-2 text-info"></i>Termos de Uso
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-white-50 text-decoration-none">
+                <i class="bi bi-chevron-right me-2 text-info"></i>RSS Feed
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="col-lg-4">
+          <h5 class="fw-bold mb-3">📬 Newsletter</h5>
+          <p class="text-white-50 mb-3">
+            Receba os melhores artigos diretamente no seu e-mail. Sem spam, prometemos! ✨
+          </p>
+          <form>
+            <div class="input-group">
+              <input type="email" class="form-control border-0" placeholder="seu@email.com" aria-label="Email">
+              <button class="btn btn-primary" type="submit">
+                <i class="bi bi-send-fill"></i>
+              </button>
+            </div>
+            <small class="text-white-50 d-block mt-2">
+              <i class="bi bi-shield-check me-1"></i> Seus dados estão seguros conosco
+            </small>
+          </form>
+        </div>
+      </div>
+
+      <hr class="my-4 border-secondary">
+      
+      <div class="text-center text-white-50">
+        <small>
+          &copy; 2024 BlogTech. Feito com <i class="bi bi-heart-fill text-danger"></i> e Bootstrap 5.3
+        </small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

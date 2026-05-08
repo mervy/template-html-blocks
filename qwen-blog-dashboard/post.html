@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como criar aplicações modernas com Bootstrap 5 • BlogTech</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- 🔍 Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info bg-gradient shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-journal-code me-2"></i>Blog<span class="text-white-50">Tech</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item"><a class="nav-link active fw-medium" href="home.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="artigos.html">Artigos</a></li>
+		  <li class="nav-item"><a class="nav-link fw-medium" href="post.html">Post</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="categorias.html">Categorias</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="sobre.html">Sobre</a></li>
+		  <li class="nav-item"><a class="nav-link fw-medium" href="contato.html">Contato</a></li>
+		  <li class="nav-item"><a class="nav-link fw-medium" href="login.html">Login</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control form-control-sm me-2 border-0" type="search" placeholder="🔍 Buscar..." aria-label="Search">
+          <button class="btn btn-light btn-sm text-info fw-medium" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 📰 Header do Post -->
+  <header class="py-4 bg-light border-bottom">
+    <div class="container px-5">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Início</a></li>
+          <li class="breadcrumb-item"><a href="artigos.html" class="text-decoration-none text-muted">Artigos</a></li>
+          <li class="breadcrumb-item active text-info fw-medium">Desenvolvimento</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 📄 Conteúdo do Post -->
+  <main class="py-5 flex-grow-1">
+    <article class="container px-5">
+      <div class="row gx-5">
+        
+        <!-- Post Principal -->
+        <div class="col-lg-8">
+          
+          <!-- Título e Meta -->
+          <header class="mb-4">
+            <span class="badge bg-primary bg-gradient text-white mb-3">Desenvolvimento</span>
+            <h1 class="display-6 fw-bold mb-3">Como criar aplicações modernas com Bootstrap 5</h1>
+            <p class="lead text-muted">Descubra as melhores práticas, componentes avançados e truques para construir interfaces profissionais usando apenas o poder do Bootstrap.</p>
+            
+            <div class="d-flex align-items-center text-muted small border-bottom pb-3">
+              <div class="d-flex align-items-center me-4">
+                <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;">
+                  <i class="bi bi-person-fill text-white"></i>
+                </div>
+                <span>Maria Silva</span>
+              </div>
+              <div class="me-4"><i class="bi bi-calendar-event me-1"></i> 18 Mai, 2024</div>
+              <div><i class="bi bi-clock me-1"></i> 7 min de leitura</div>
+            </div>
+          </header>
+
+          <!-- Imagem Destaque -->
+          <figure class="mb-4">
+            <div class="bg-primary bg-gradient rounded-4 d-flex align-items-center justify-content-center" style="height: 300px;">
+              <i class="bi bi-laptop display-1 text-white opacity-50"></i>
+            </div>
+            <figcaption class="text-muted small text-center mt-2">Bootstrap 5 oferece componentes prontos e responsivos</figcaption>
+          </figure>
+
+          <!-- Conteúdo -->
+          <div class="post-content">
+            <p class="mb-4">O <strong>Bootstrap 5</strong> revolucionou a forma como construímos interfaces web. Com uma abordagem mobile-first e utilitários poderosos, é possível criar layouts complexos sem escrever uma linha de CSS customizado.</p>
+            
+            <h3 class="h5 fw-bold mt-4 mb-3">🎨 Por que usar Bootstrap?</h3>
+            <ul class="list-unstyled mb-4">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Componentes prontos e testados</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Responsividade nativa</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Comunidade ativa e documentação completa</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i>Fácil integração com frameworks JS</li>
+            </ul>
+
+            <h3 class="h5 fw-bold mt-4 mb-3">⚡ Dicas Práticas</h3>
+            <p>Use as classes utilitárias para espaçamento (<code>mt-3</code>, <code>p-4</code>), cores (<code>text-primary</code>, <code>bg-light</code>) e display (<code>d-flex</code>, <code>d-none</code>). Isso acelera o desenvolvimento e mantém o código limpo.</p>
+            
+            <div class="alert alert-info border-0 mb-4">
+              <i class="bi bi-lightbulb-fill me-2"></i>
+              <strong>Dica Pro:</strong> Combine <code>bg-gradient</code> com cores do Bootstrap para criar botões e cards com visual moderno sem CSS extra!
+            </div>
+
+            <h3 class="h5 fw-bold mt-4 mb-3">🧩 Componentes Avançados</h3>
+            <p>Explore modais, offcanvas, tooltips e popovers. Todos funcionam com data attributes, sem necessidade de JavaScript complexo:</p>
+            
+            <div class="bg-light rounded p-3 mb-4">
+              <code class="small">&lt;button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"&gt;Abrir Modal&lt;/button&gt;</code>
+            </div>
+
+            <!-- Ícones de Feedback -->
+            <div class="d-flex align-items-center gap-3 py-3 border-top border-bottom my-4">
+              <span class="text-muted small">Este artigo foi útil?</span>
+              <button class="btn btn-outline-success btn-sm" title="Útil">
+                <i class="bi bi-hand-thumbs-up-fill me-1"></i> Sim
+              </button>
+              <button class="btn btn-outline-secondary btn-sm" title="Não útil">
+                <i class="bi bi-hand-thumbs-down-fill me-1"></i> Não
+              </button>
+              <button class="btn btn-outline-info btn-sm ms-auto" title="Compartilhar">
+                <i class="bi bi-share-fill me-1"></i> Compartilhar
+              </button>
+            </div>
+
+            <!-- Tags -->
+            <div class="d-flex flex-wrap gap-2 mb-5">
+              <span class="badge bg-light text-dark border">Bootstrap</span>
+              <span class="badge bg-light text-dark border">Frontend</span>
+              <span class="badge bg-light text-dark border">CSS</span>
+              <span class="badge bg-light text-dark border">Responsivo</span>
+            </div>
+          </div>
+
+          <!-- 💬 Comentários -->
+          <section class="mb-5">
+            <h3 class="h5 fw-bold mb-4">💬 Comentários (<span class="text-primary">3</span>)</h3>
+            
+            <!-- Form de Comentário -->
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body">
+                <h6 class="fw-bold mb-3">Deixe seu comentário</h6>
+                <form>
+                  <div class="mb-3">
+                    <textarea class="form-control" rows="3" placeholder="Escreva seu comentário..." required></textarea>
+                  </div>
+                  <button class="btn btn-primary btn-sm" type="submit">
+                    <i class="bi bi-send-fill me-1"></i> Postar
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Lista de Comentários -->
+            <div class="d-flex mb-4">
+              <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+                <i class="bi bi-person-fill text-white"></i>
+              </div>
+              <div class="flex-grow-1">
+                <div class="card border-0 bg-light">
+                  <div class="card-body py-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <h6 class="fw-bold mb-0">João Santos</h6>
+                      <small class="text-muted">há 2 dias</small>
+                    </div>
+                    <p class="card-text small mb-0">Excelente artigo! As dicas de utilitários me ajudaram muito a refatorar meu projeto.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex mb-4">
+              <div class="bg-info rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+                <i class="bi bi-person-fill text-white"></i>
+              </div>
+              <div class="flex-grow-1">
+                <div class="card border-0 bg-light">
+                  <div class="card-body py-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <h6 class="fw-bold mb-0">Ana Costa</h6>
+                      <small class="text-muted">há 5 dias</small>
+                    </div>
+                    <p class="card-text small mb-0">Alguém sabe se o Bootstrap 5 funciona bem com Tailwind? Estou pensando em migrar.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex">
+              <div class="bg-success rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+                <i class="bi bi-person-fill text-white"></i>
+              </div>
+              <div class="flex-grow-1">
+                <div class="card border-0 bg-light">
+                  <div class="card-body py-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <h6 class="fw-bold mb-0">Carlos Lima</h6>
+                      <small class="text-muted">há 1 semana</small>
+                    </div>
+                    <p class="card-text small mb-0">Uso Bootstrap em todos os meus projetos. A consistência dos componentes economiza horas de desenvolvimento!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 🔗 Posts Sugeridos -->
+          <section>
+            <h3 class="h5 fw-bold mb-4">🔗 Você também pode gostar</h3>
+            <div class="row g-3">
+              
+              <!-- Sugestão 1 -->
+              <div class="col-md-4">
+                <a href="post.html" class="text-decoration-none">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="bg-success bg-gradient" style="height: 120px;">
+                      <i class="bi bi-palette position-absolute top-50 start-50 translate-middle text-white opacity-50"></i>
+                    </div>
+                    <div class="card-body">
+                      <span class="badge bg-success bg-gradient text-white mb-2">Design</span>
+                      <h6 class="card-title fw-bold small">UI/UX: Tendências 2024</h6>
+                      <small class="text-muted"><i class="bi bi-clock me-1"></i> 6 min</small>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Sugestão 2 -->
+              <div class="col-md-4">
+                <a href="post.html" class="text-decoration-none">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="bg-warning bg-gradient" style="height: 120px;">
+                      <i class="bi bi-lightning-charge position-absolute top-50 start-50 translate-middle text-dark opacity-50"></i>
+                    </div>
+                    <div class="card-body">
+                      <span class="badge bg-warning bg-gradient text-dark mb-2">DevOps</span>
+                      <h6 class="card-title fw-bold small">Deploy Rápido com Docker</h6>
+                      <small class="text-muted"><i class="bi bi-clock me-1"></i> 8 min</small>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Sugestão 3 -->
+              <div class="col-md-4">
+                <a href="post.html" class="text-decoration-none">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="bg-info bg-gradient" style="height: 120px;">
+                      <i class="bi bi-code-slash position-absolute top-50 start-50 translate-middle text-white opacity-50"></i>
+                    </div>
+                    <div class="card-body">
+                      <span class="badge bg-info bg-gradient text-white mb-2">JavaScript</span>
+                      <h6 class="card-title fw-bold small">ES6+ que todo dev deve saber</h6>
+                      <small class="text-muted"><i class="bi bi-clock me-1"></i> 5 min</small>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="col-lg-4">
+          
+          <!-- Autor -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body text-center p-4">
+              <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                <i class="bi bi-person-fill display-6 text-white"></i>
+              </div>
+              <h5 class="fw-bold mb-1">Maria Silva</h5>
+              <p class="text-muted small mb-3">Desenvolvedora Frontend • 42 artigos</p>
+              <div class="d-flex justify-content-center gap-2">
+                <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categorias -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body p-4">
+              <h6 class="fw-bold mb-3">🗂️ Categorias</h6>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="#" class="text-decoration-none text-muted">IA & Dados <span class="badge bg-primary bg-gradient ms-2">24</span></a></li>
+                <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Design <span class="badge bg-success bg-gradient ms-2">18</span></a></li>
+                <li class="mb-2"><a href="#" class="text-decoration-none text-muted">DevOps <span class="badge bg-warning bg-gradient ms-2">31</span></a></li>
+                <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Segurança <span class="badge bg-danger bg-gradient ms-2">15</span></a></li>
+                <li><a href="#" class="text-decoration-none text-muted">Carreira <span class="badge bg-secondary bg-gradient ms-2">27</span></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Newsletter Sidebar -->
+          <div class="card border-0 shadow-sm bg-info bg-gradient text-white">
+            <div class="card-body p-4 text-center">
+              <i class="bi bi-envelope-fill display-6 mb-3"></i>
+              <h6 class="fw-bold mb-2">Receba novidades</h6>
+              <p class="small mb-3 opacity-75">Artigos exclusivos direto no seu e-mail.</p>
+              <form>
+                <input type="email" class="form-control form-control-sm mb-2 border-0" placeholder="seu@email.com">
+                <button class="btn btn-light btn-sm w-100 fw-medium text-info">Assinar</button>
+              </form>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- 📬 Footer -->
+  <footer class="bg-dark text-white mt-auto">
+    <div class="container px-5 py-5">
+      <div class="row gx-5">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h5 class="fw-bold mb-3"><i class="bi bi-journal-code me-2"></i>Blog<span class="text-info">Tech</span></h5>
+          <p class="text-white-50 mb-4">Conteúdo tech de qualidade para impulsionar sua carreira.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-twitter-x fs-5"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-instagram fs-5"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-linkedin fs-5"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-github fs-5"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h5 class="fw-bold mb-3">Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-chevron-right me-2 text-info"></i>Sobre</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-chevron-right me-2 text-info"></i>Contato</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-chevron-right me-2 text-info"></i>Privacidade</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="fw-bold mb-3">📬 Newsletter</h5>
+          <form>
+            <div class="input-group">
+              <input type="email" class="form-control border-0" placeholder="seu@email.com">
+              <button class="btn btn-primary" type="submit"><i class="bi bi-send-fill"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr class="my-4 border-secondary">
+      <div class="text-center text-white-50"><small>&copy; 2024 BlogTech • Feito com <i class="bi bi-heart-fill text-danger"></i> e Bootstrap</small></div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

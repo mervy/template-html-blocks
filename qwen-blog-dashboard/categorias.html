@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categorias • BlogTech</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- 🔍 Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info bg-gradient shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-journal-code me-2"></i>Blog<span class="text-white-50">Tech</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item"><a class="nav-link active fw-medium" href="home.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="artigos.html">Artigos</a></li>
+		  <li class="nav-item"><a class="nav-link fw-medium" href="post.html">Post</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="categorias.html">Categorias</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="sobre.html">Sobre</a></li>
+		  <li class="nav-item"><a class="nav-link fw-medium" href="contato.html">Contato</a></li>
+		  <li class="nav-item"><a class="nav-link fw-medium" href="login.html">Login</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control form-control-sm me-2 border-0" type="search" placeholder="🔍 Buscar..." aria-label="Search">
+          <button class="btn btn-light btn-sm text-info fw-medium" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 📂 Header -->
+  <header class="py-4 bg-light border-bottom">
+    <div class="container px-5">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Início</a></li>
+          <li class="breadcrumb-item active text-info fw-medium" aria-current="page">Categorias</li>
+        </ol>
+      </nav>
+      <h1 class="display-6 fw-bold mt-3 mb-0">🗂️ Categorias</h1>
+      <p class="text-muted mb-0">Navegue por temas e encontre o conteúdo ideal para você</p>
+    </div>
+  </header>
+
+  <!-- 📚 Grid de Categorias -->
+  <main class="py-5 flex-grow-1">
+    <div class="container px-5">
+      <div class="row g-4">
+        
+        <!-- Categoria 1 -->
+        <div class="col-md-6 col-lg-4">
+          <a href="artigos.html" class="text-decoration-none">
+            <div class="card h-100 border-0 shadow-sm hover-shadow">
+              <div class="card-body text-center p-4">
+                <div class="bg-primary bg-gradient rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                  <i class="bi bi-cpu display-5 text-white"></i>
+                </div>
+                <h5 class="card-title fw-bold mb-2">IA & Dados</h5>
+                <p class="card-text text-muted small mb-3">Machine Learning, Big Data, Analytics e muito mais.</p>
+                <span class="badge bg-primary bg-gradient text-white">24 artigos</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Categoria 2 -->
+        <div class="col-md-6 col-lg-4">
+          <a href="artigos.html" class="text-decoration-none">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="bg-success bg-gradient rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                  <i class="bi bi-palette display-5 text-white"></i>
+                </div>
+                <h5 class="card-title fw-bold mb-2">Design</h5>
+                <p class="card-text text-muted small mb-3">UI/UX, Figma, prototipagem e tendências visuais.</p>
+                <span class="badge bg-success bg-gradient text-white">18 artigos</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Categoria 3 -->
+        <div class="col-md-6 col-lg-4">
+          <a href="artigos.html" class="text-decoration-none">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="bg-warning bg-gradient rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                  <i class="bi bi-lightning-charge display-5 text-dark"></i>
+                </div>
+                <h5 class="card-title fw-bold mb-2">DevOps</h5>
+                <p class="card-text text-muted small mb-3">Docker, Kubernetes, CI/CD e infraestrutura como código.</p>
+                <span class="badge bg-warning bg-gradient text-dark">31 artigos</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Categoria 4 -->
+        <div class="col-md-6 col-lg-4">
+          <a href="artigos.html" class="text-decoration-none">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="bg-danger bg-gradient rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                  <i class="bi bi-shield-check display-5 text-white"></i>
+                </div>
+                <h5 class="card-title fw-bold mb-2">Segurança</h5>
+                <p class="card-text text-muted small mb-3">Cybersecurity, pentest, boas práticas e compliance.</p>
+                <span class="badge bg-danger bg-gradient text-white">15 artigos</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Categoria 5 -->
+        <div class="col-md-6 col-lg-4">
+          <a href="artigos.html" class="text-decoration-none">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="bg-info bg-gradient rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                  <i class="bi bi-code-slash display-5 text-white"></i>
+                </div>
+                <h5 class="card-title fw-bold mb-2">Desenvolvimento</h5>
+                <p class="card-text text-muted small mb-3">Frontend, Backend, APIs, frameworks e linguagens.</p>
+                <span class="badge bg-info bg-gradient text-white">42 artigos</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Categoria 6 -->
+        <div class="col-md-6 col-lg-4">
+          <a href="artigos.html" class="text-decoration-none">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="bg-secondary bg-gradient rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                  <i class="bi bi-briefcase display-5 text-white"></i>
+                </div>
+                <h5 class="card-title fw-bold mb-2">Carreira</h5>
+                <p class="card-text text-muted small mb-3">Dicas profissionais, entrevistas, networking e crescimento.</p>
+                <span class="badge bg-secondary bg-gradient text-white">27 artigos</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Tags Cloud -->
+      <div class="mt-5 pt-4 border-top">
+        <h5 class="fw-bold mb-3">🏷️ Tags Populares</h5>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge bg-light text-dark border">JavaScript</span>
+          <span class="badge bg-light text-dark border">Python</span>
+          <span class="badge bg-light text-dark border">React</span>
+          <span class="badge bg-light text-dark border">Node.js</span>
+          <span class="badge bg-light text-dark border">PostgreSQL</span>
+          <span class="badge bg-light text-dark border">Docker</span>
+          <span class="badge bg-light text-dark border">AWS</span>
+          <span class="badge bg-light text-dark border">Bootstrap</span>
+          <span class="badge bg-light text-dark border">APIs</span>
+          <span class="badge bg-light text-dark border">Git</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 📬 Footer -->
+  <footer class="bg-dark text-white mt-auto">
+    <div class="container px-5 py-5">
+      <div class="row gx-5">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h5 class="fw-bold mb-3"><i class="bi bi-journal-code me-2"></i>Blog<span class="text-info">Tech</span></h5>
+          <p class="text-white-50 mb-4">Conteúdo tech de qualidade para impulsionar sua carreira.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-twitter-x fs-5"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-instagram fs-5"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-linkedin fs-5"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-github fs-5"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h5 class="fw-bold mb-3">Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-chevron-right me-2 text-info"></i>Sobre</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-chevron-right me-2 text-info"></i>Contato</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-chevron-right me-2 text-info"></i>Privacidade</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="fw-bold mb-3">📬 Newsletter</h5>
+          <form>
+            <div class="input-group">
+              <input type="email" class="form-control border-0" placeholder="seu@email.com">
+              <button class="btn btn-primary" type="submit"><i class="bi bi-send-fill"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr class="my-4 border-secondary">
+      <div class="text-center text-white-50"><small>&copy; 2024 BlogTech • Feito com <i class="bi bi-heart-fill text-danger"></i> e Bootstrap</small></div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

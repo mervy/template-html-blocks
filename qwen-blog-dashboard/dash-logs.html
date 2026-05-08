@@ -1,0 +1,107 @@
+<!-- {{TITLE}} = "Logs" | {{ACTIVE_LOGS}} = "active bg-white text-success fw-medium" -->
+
+<div class="p-4 p-lg-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2 class="fw-bold mb-1 text-dark">📋 Logs do Sistema</h2>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="dash-home.html" class="text-decoration-none text-muted">Dashboard</a></li>
+          <li class="breadcrumb-item active text-success">Logs</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="d-flex gap-2">
+      <button class="btn btn-outline-success btn-sm"><i class="bi bi-download me-1"></i>Exportar</button>
+      <button class="btn btn-outline-danger btn-sm"><i class="bi bi-trash me-1"></i>Limpar</button>
+    </div>
+  </div>
+
+  <!-- Filtros de Log -->
+  <div class="card border-0 shadow-sm mb-4">
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-md-3">
+          <select class="form-select">
+            <option>Todos os níveis</option>
+            <option>✅ Info</option>
+            <option>⚠️ Aviso</option>
+            <option>❌ Erro</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <input type="date" class="form-control" placeholder="Data inicial">
+        </div>
+        <div class="col-md-3">
+          <input type="date" class="form-control" placeholder="Data final">
+        </div>
+        <div class="col-md-3">
+          <button class="btn btn-outline-success w-100">Filtrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabela de Logs -->
+  <div class="card border-0 shadow-sm">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0">
+        <thead class="bg-light">
+          <tr>
+            <th class="ps-4">Data/Hora</th>
+            <th>Nível</th>
+            <th>Usuário</th>
+            <th>Ação</th>
+            <th>Detalhes</th>
+            <th>IP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ps-4 text-dark small">18 Mai, 2024 14:32</td>
+            <td><span class="badge bg-success-subtle text-success">✅ Info</span></td>
+            <td class="text-dark">Maria Silva</td>
+            <td class="text-dark">Artigo publicado</td>
+            <td class="text-muted small">"Como criar dashboards com Bootstrap"</td>
+            <td class="text-dark small">192.168.1.100</td>
+          </tr>
+          <tr>
+            <td class="ps-4 text-dark small">18 Mai, 2024 13:15</td>
+            <td><span class="badge bg-warning-subtle text-warning">⚠️ Aviso</span></td>
+            <td class="text-dark">Sistema</td>
+            <td class="text-dark">Backup iniciado</td>
+            <td class="text-muted small">Backup diário automático</td>
+            <td class="text-dark small">localhost</td>
+          </tr>
+          <tr>
+            <td class="ps-4 text-dark small">18 Mai, 2024 11:08</td>
+            <td><span class="badge bg-danger-subtle text-danger">❌ Erro</span></td>
+            <td class="text-dark">João Santos</td>
+            <td class="text-dark">Falha no upload</td>
+            <td class="text-muted small">Arquivo muito grande (max: 5MB)</td>
+            <td class="text-dark small">201.45.78.12</td>
+          </tr>
+          <tr>
+            <td class="ps-4 text-dark small">17 Mai, 2024 22:41</td>
+            <td><span class="badge bg-success-subtle text-success">✅ Info</span></td>
+            <td class="text-dark">Ana Costa</td>
+            <td class="text-dark">Login realizado</td>
+            <td class="text-muted small">Acesso via navegador Chrome</td>
+            <td class="text-dark small">177.89.12.45</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer bg-white border-0 py-3">
+      <nav>
+        <ul class="pagination justify-content-end mb-0">
+          <li class="page-item disabled"><a class="page-link border-0 text-muted" href="#"><i class="bi bi-chevron-left"></i></a></li>
+          <li class="page-item active"><a class="page-link bg-success border-0" href="#">1</a></li>
+          <li class="page-item"><a class="page-link border-0 text-dark" href="#">2</a></li>
+          <li class="page-item"><a class="page-link border-0 text-dark" href="#">3</a></li>
+          <li class="page-item"><a class="page-link border-0 text-dark" href="#"><i class="bi bi-chevron-right"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

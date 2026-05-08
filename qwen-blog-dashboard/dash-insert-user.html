@@ -1,0 +1,67 @@
+<!-- {{TITLE}} = "Novo Usuário" | {{ACTIVE_INSERT_USER}} = "active bg-white text-success fw-medium" -->
+
+<div class="p-4 p-lg-5">
+  <div class="mb-4">
+    <h2 class="fw-bold mb-1 text-dark">👤 {{EDIT_MODE ? 'Editar' : 'Novo'}} Usuário</h2>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="dash-home.html" class="text-decoration-none text-muted">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="dash-users.html" class="text-decoration-none text-muted">Usuários</a></li>
+        <li class="breadcrumb-item active text-success">{{EDIT_MODE ? 'Editar' : 'Novo'}}</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="card border-0 shadow-sm" style="max-width: 600px;">
+    <div class="card-body p-4 p-lg-5">
+      <form>
+        <!-- Nome -->
+        <div class="mb-3">
+          <label class="form-label fw-medium text-dark">Nome Completo *</label>
+          <input type="text" class="form-control" placeholder="Ex: Maria Silva" required>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label class="form-label fw-medium text-dark">E-mail *</label>
+          <input type="email" class="form-control" placeholder="usuario@email.com" required>
+        </div>
+
+        <!-- Papel -->
+        <div class="mb-3">
+          <label class="form-label fw-medium text-dark">Papel *</label>
+          <select class="form-select" required>
+            <option value="">Selecione...</option>
+            <option value="admin">🔑 Admin</option>
+            <option value="editor">✏️ Editor</option>
+            <option value="author" selected>📝 Autor</option>
+            <option value="subscriber">👁️ Leitor</option>
+          </select>
+        </div>
+
+        <!-- Senha (só no cadastro) -->
+        <div class="mb-3">
+          <label class="form-label fw-medium text-dark">{{EDIT_MODE ? 'Nova Senha (opcional)' : 'Senha *'}}</label>
+          <input type="password" class="form-control" placeholder="••••••••" {{!EDIT_MODE ? 'required' : ''}} minlength="6">
+        </div>
+
+        <!-- Status -->
+        <div class="mb-4">
+          <label class="form-label fw-medium text-dark">Status</label>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="activeSwitch" checked>
+            <label class="form-check-label text-dark" for="activeSwitch">Usuário ativo</label>
+          </div>
+        </div>
+
+        <!-- Botões -->
+        <div class="d-flex gap-3">
+          <button type="submit" class="btn btn-success btn-lg px-4">
+            <i class="bi bi-person-plus me-2"></i>{{EDIT_MODE ? 'Atualizar' : 'Criar'}} Usuário
+          </button>
+          <a href="dash-users.html" class="btn btn-outline-secondary btn-lg px-4">Cancelar</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

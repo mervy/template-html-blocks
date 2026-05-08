@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} • BlogTech Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    /* Mínimo CSS necessário - Sidebar fixa com footer sempre visível */
+    .wrapper { display: flex; min-height: 100vh; }
+    .sidebar { 
+      width: 260px; 
+      display: flex; 
+      flex-direction: column;
+      border-right: 1px solid rgba(0,0,0,0.1);
+    }
+    .sidebar-nav { flex: 1; overflow-y: auto; }
+    .content { flex: 1; background: #fafafa; }
+    @media (max-width: 991px) {
+      .sidebar { 
+        position: fixed; 
+        left: 0; top: 0; height: 100%; 
+        transform: translateX(-100%); 
+        transition: transform 0.3s ease;
+        z-index: 1040;
+      }
+      .sidebar.show { transform: translateX(0); }
+      .overlay { 
+        display: none; position: fixed; inset: 0; 
+        background: rgba(0,0,0,0.3); z-index: 1030; 
+      }
+      .overlay.show { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Overlay Mobile -->
+  <div class="overlay" id="sidebarOverlay"></div>
+
+  <div class="wrapper">
+    
+    <!-- 🧭 Sidebar Fixa -->
+    <aside class="sidebar bg-success-subtle text-dark">
+      
+      <!-- Brand -->
+      <div class="p-4 border-bottom">
+        <a href="dash-home.html" class="d-flex align-items-center gap-2 text-dark text-decoration-none">
+          <i class="bi bi-journal-code fs-4 text-success"></i>
+          <span class="fw-bold fs-5">BlogTech<span class="text-muted">Admin</span></span>
+        </a>
+      </div>
+
+      <!-- Menu (scrollável) -->
+      <nav class="nav flex-column p-3 gap-1 sidebar-nav">
+        <a href="dash-home.html" class="nav-link text-dark py-2 px-3 rounded {{ACTIVE_HOME}}">
+          <i class="bi bi-speedometer2 me-2 text-success"></i>Dashboard
+        </a>
+        <a href="dash-articles.html" class="nav-link text-dark py-2 px-3 rounded {{ACTIVE_ARTICLES}}">
+          <i class="bi bi-journal-text me-2 text-success"></i>Artigos
+        </a>
+        <a href="dash-insert-article.html" class="nav-link text-dark py-2 px-3 rounded {{ACTIVE_INSERT_ARTICLE}}">
+          <i class="bi bi-journal-plus me-2 text-success"></i>Novo Artigo
+        </a>
+        <a href="dash-categories.html" class="nav-link text-dark py-2 px-3 rounded {{ACTIVE_CATEGORIES}}">
+          <i class="bi bi-tags me-2 text-success"></i>Categorias
+        </a>
+        <a href="dash-insert-category.html" class="nav-link text-dark py-2 px-3 rounded {{ACTIVE_INSERT_CATEGORY}}">
+          <i class="bi bi-tag-plus me-2 text-success"></i>Nova Categoria
+        </a>
+        <a href="dash-users.html" class="nav-link text-dark py-2 px-3 rounded {{ACTIVE_USERS}}">
+          <i class="bi bi-people me-2 text-success"></i>Usuários
+        </a>
+        <a href="dash-insert-user.html" class="nav-link text-dark py-2 px-3 rounded {{ACTIVE_INSERT_USER}}">
+          <i class="bi bi-person-plus me-2 text-success"></i>Novo Usuário
+        </a>
+        <a href="dash-settings.html" class="nav-link text-dark py-2 px-3 rounded {{ACTIVE_SETTINGS}}">
+          <i class="bi bi-gear me-2 text-success"></i>Configurações
+        </a>
+        <a href="dash-logs.html" class="nav-link text-dark py-2 px-3 rounded {{ACTIVE_LOGS}}">
+          <i class="bi bi-journal-bookmark me-2 text-success"></i>Logs
+        </a>
+      </nav>
+
+      <!-- Footer FIXO (sempre visível) -->
+      <div class="p-3 border-top bg-white">
+        <a href="index.html" class="btn btn-outline-success btn-sm w-100 mb-2">
+          <i class="bi bi-house me-2"></i>Ver Site
+        </a>
+        <a href="login.html" class="btn btn-outline-secondary btn-sm w-100">
+          <i class="bi bi-box-arrow-left me-2"></i>Sair
+        </a>
+      </div>
+    </aside>
+
+    <!-- 📄 Conteúdo Principal -->
+    <main class="content">
+      
+      <!-- Top Navbar -->
+      <header class="bg-white border-bottom shadow-sm sticky-top">
+        <div class="d-flex align-items-center justify-content-between px-4 py-3">
+          <button class="btn btn-outline-success d-lg-none" id="sidebarToggle">
+            <i class="bi bi-list"></i>
+          </button>
+          <form class="d-none d-md-flex flex-grow-1 mx-4" style="max-width: 400px;">
+            <div class="input-group">
+              <span class="input-group-text bg-light border-end-0">
+                <i class="bi bi-search text-muted"></i>
+              </span>
+              <input type="search" class="form-control border-start-0 bg-light" placeholder="Buscar...">
+            </div>
+          </form>
+          <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-light position-relative" title="Notificações">
+              <i class="bi bi-bell text-dark"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:0.65rem;">3</span>
+            </button>
+            <div class="dropdown">
+              <button class="btn btn-light d-flex align-items-center gap-2 dropdown-toggle text-dark" data-bs-toggle="dropdown">
+                <div class="bg-success-subtle rounded-circle d-flex align-items-center justify-content-center border" style="width:32px;height:32px;">
+                  <i class="bi bi-person-fill text-success small"></i>
+                </div>
+                <span class="d-none d-sm-inline fw-medium">Admin</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow">
+                <li><a class="dropdown-item" href="dash-settings.html"><i class="bi bi-person me-2"></i>Meu Perfil</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-left me-2"></i>Sair</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTEÚDO DA PÁGINA AQUI -->
+      {{CONTENT}}
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Toggle sidebar mobile
+    const sidebar = document.querySelector('.sidebar'), overlay = document.getElementById('sidebarOverlay'), toggle = document.getElementById('sidebarToggle');
+    function toggleSidebar() { sidebar.classList.toggle('show'); overlay.classList.toggle('show'); }
+    toggle?.addEventListener('click', toggleSidebar); overlay?.addEventListener('click', toggleSidebar);
+  </script>
+</body>
+</html>
