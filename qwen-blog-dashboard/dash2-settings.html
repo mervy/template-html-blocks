@@ -1,0 +1,91 @@
+<!-- {{TITLE}} = "Configurações" | {{ACTIVE_SETTINGS}} = "active bg-white text-success fw-medium" -->
+
+<div class="p-4 p-lg-5">
+  <h2 class="fw-bold mb-4 text-dark">⚙️ Configurações</h2>
+
+  <div class="row g-4">
+    <!-- Perfil -->
+    <div class="col-lg-6">
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white border-0 py-3">
+          <h5 class="fw-bold mb-0 text-dark">👤 Meu Perfil</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Nome</label>
+              <input type="text" class="form-control" value="Admin">
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">E-mail</label>
+              <input type="email" class="form-control" value="admin@blogtech.com">
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Idioma</label>
+              <select class="form-select">
+                <option>Português (Brasil)</option>
+                <option>English</option>
+                <option>Español</option>
+              </select>
+            </div>
+            <button class="btn btn-success">Salvar Alterações</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preferências -->
+    <div class="col-lg-6">
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white border-0 py-3">
+          <h5 class="fw-bold mb-0 text-dark">🔔 Preferências</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-check form-switch mb-3">
+              <input class="form-check-input" type="checkbox" role="switch" id="emailNotify" checked>
+              <label class="form-check-label text-dark" for="emailNotify">Notificações por e-mail</label>
+            </div>
+            <div class="form-check form-switch mb-3">
+              <input class="form-check-input" type="checkbox" role="switch" id="articleAlerts">
+              <label class="form-check-label text-dark" for="articleAlerts">Alertas de novos artigos</label>
+            </div>
+            <div class="form-check form-switch mb-3">
+              <input class="form-check-input" type="checkbox" role="switch" id="darkMode">
+              <label class="form-check-label text-dark" for="darkMode">Modo escuro (em breve)</label>
+            </div>
+            <button class="btn btn-outline-success">Salvar Preferências</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Segurança -->
+    <div class="col-12">
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white border-0 py-3">
+          <h5 class="fw-bold mb-0 text-dark">🔐 Segurança</h5>
+        </div>
+        <div class="card-body">
+          <form class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label small text-muted">Senha Atual</label>
+              <input type="password" class="form-control">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label small text-muted">Nova Senha</label>
+              <input type="password" class="form-control">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label small text-muted">Confirmar Nova Senha</label>
+              <input type="password" class="form-control">
+            </div>
+            <div class="col-12">
+              <button class="btn btn-outline-success">Atualizar Senha</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

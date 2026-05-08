@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard • BlogTech Admin</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <style>
+    /* Sidebar fixa + conteúdo com scroll */
+    .wrapper { display: flex; min-height: 100vh; }
+    .sidebar { 
+      width: 260px; 
+      transition: transform 0.3s ease;
+      z-index: 1040;
+    }
+    .content { 
+      flex: 1; 
+      background: #f8f9fa;
+      min-height: 100vh;
+    }
+    /* Mobile: esconder sidebar por padrão */
+    @media (max-width: 991px) {
+      .sidebar { 
+        position: fixed; 
+        left: 0; 
+        top: 0; 
+        height: 100%;
+        transform: translateX(-100%);
+      }
+      .sidebar.show { transform: translateX(0); }
+      .overlay { 
+        display: none; 
+        position: fixed; 
+        inset: 0; 
+        background: rgba(0,0,0,0.4); 
+        z-index: 1030;
+      }
+      .overlay.show { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Overlay para mobile -->
+  <div class="overlay" id="sidebarOverlay"></div>
+
+  <div class="wrapper">
+    
+    <!-- 🧭 Sidebar Verde -->
+    <aside class="sidebar bg-success bg-gradient text-white d-flex flex-column">
+      
+      <!-- Logo / Brand -->
+      <div class="p-4 border-bottom border-success-subtle">
+        <a href="dash-home.html" class="d-flex align-items-center gap-2 text-white text-decoration-none">
+          <i class="bi bi-journal-code fs-4"></i>
+          <span class="fw-bold fs-5">BlogTech<span class="opacity-75">Admin</span></span>
+        </a>
+      </div>
+
+      <!-- Menu de Navegação -->
+      <nav class="nav flex-column p-3 gap-1 flex-grow-1">
+        <a href="dash-home.html" class="nav-link text-white fw-medium active bg-success-subtle rounded px-3 py-2">
+          <i class="bi bi-speedometer2 me-2"></i>Dashboard
+        </a>
+        <a href="dash-articles.html" class="nav-link text-white-75 hover-white px-3 py-2">
+          <i class="bi bi-journal-text me-2"></i>Artigos
+        </a>
+        <a href="dash-insert-article.html" class="nav-link text-white-75 hover-white px-3 py-2">
+          <i class="bi bi-journal-plus me-2"></i>Novo Artigo
+        </a>
+        <a href="dash-categories.html" class="nav-link text-white-75 hover-white px-3 py-2">
+          <i class="bi bi-tags me-2"></i>Categorias
+        </a>
+        <a href="dash-insert-category.html" class="nav-link text-white-75 hover-white px-3 py-2">
+          <i class="bi bi-tag-plus me-2"></i>Nova Categoria
+        </a>
+        <a href="dash-users.html" class="nav-link text-white-75 hover-white px-3 py-2">
+          <i class="bi bi-people me-2"></i>Usuários
+        </a>
+        <a href="dash-settings.html" class="nav-link text-white-75 hover-white px-3 py-2">
+          <i class="bi bi-gear me-2"></i>Configurações
+        </a>
+      </nav>
+
+      <!-- Footer da Sidebar -->
+      <div class="p-3 border-top border-success-subtle">
+        <a href="index.html" class="btn btn-light btn-sm w-100 fw-medium text-success">
+          <i class="bi bi-house me-2"></i>Ver Site
+        </a>
+        <a href="login.html" class="btn btn-outline-light btn-sm w-100 mt-2">
+          <i class="bi bi-box-arrow-left me-2"></i>Sair
+        </a>
+      </div>
+    </aside>
+
+    <!-- 📄 Conteúdo Principal -->
+    <main class="content">
+      
+      <!-- Top Navbar -->
+      <header class="bg-white border-bottom shadow-sm sticky-top">
+        <div class="d-flex align-items-center justify-content-between px-4 py-3">
+          
+          <!-- Toggle Sidebar (Mobile) -->
+          <button class="btn btn-outline-success d-lg-none" id="sidebarToggle">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <!-- Search -->
+          <form class="d-none d-md-flex flex-grow-1 mx-4" style="max-width: 400px;">
+            <div class="input-group">
+              <span class="input-group-text bg-light border-end-0">
+                <i class="bi bi-search text-muted"></i>
+              </span>
+              <input type="search" class="form-control border-start-0 bg-light" placeholder="Buscar...">
+            </div>
+          </form>
+
+          <!-- Ações -->
+          <div class="d-flex align-items-center gap-3">
+            <!-- Notificações -->
+            <button class="btn btn-light position-relative" title="Notificações">
+              <i class="bi bi-bell"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.65rem;">3</span>
+            </button>
+            
+            <!-- Perfil -->
+            <div class="dropdown">
+              <button class="btn btn-light d-flex align-items-center gap-2 dropdown-toggle" data-bs-toggle="dropdown">
+                <div class="bg-success rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                  <i class="bi bi-person-fill text-white small"></i>
+                </div>
+                <span class="d-none d-sm-inline fw-medium">Admin</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow">
+                <li><a class="dropdown-item" href="dash-settings.html"><i class="bi bi-person me-2"></i>Meu Perfil</a></li>
+                <li><a class="dropdown-item" href="dash-settings.html"><i class="bi bi-gear me-2"></i>Configurações</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-left me-2"></i>Sair</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 📊 Conteúdo do Dashboard -->
+      <div class="p-4 p-lg-5">
+        
+        <!-- Título + Breadcrumb -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h2 class="fw-bold mb-1">📊 Visão Geral</h2>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item active text-success">Dashboard</li>
+              </ol>
+            </nav>
+          </div>
+          <button class="btn btn-success">
+            <i class="bi bi-plus-lg me-2"></i>Novo Artigo
+          </button>
+        </div>
+
+        <!-- Cards de Estatísticas -->
+        <div class="row g-4 mb-5">
+          <!-- Card 1 -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <p class="text-muted small mb-1">Total de Artigos</p>
+                    <h3 class="fw-bold mb-0">142</h3>
+                    <span class="text-success small"><i class="bi bi-arrow-up"></i> +12% este mês</span>
+                  </div>
+                  <div class="bg-success bg-gradient rounded-circle p-3">
+                    <i class="bi bi-journal-text text-white fs-5"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <p class="text-muted small mb-1">Categorias</p>
+                    <h3 class="fw-bold mb-0">28</h3>
+                    <span class="text-muted small">6 ativas</span>
+                  </div>
+                  <div class="bg-info bg-gradient rounded-circle p-3">
+                    <i class="bi bi-tags text-white fs-5"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <p class="text-muted small mb-1">Usuários</p>
+                    <h3 class="fw-bold mb-0">1.284</h3>
+                    <span class="text-success small"><i class="bi bi-arrow-up"></i> +8% esta semana</span>
+                  </div>
+                  <div class="bg-primary bg-gradient rounded-circle p-3">
+                    <i class="bi bi-people text-white fs-5"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <p class="text-muted small mb-1">Visualizações</p>
+                    <h3 class="fw-bold mb-0">45.2k</h3>
+                    <span class="text-success small"><i class="bi bi-arrow-up"></i> +23% este mês</span>
+                  </div>
+                  <div class="bg-warning bg-gradient rounded-circle p-3">
+                    <i class="bi bi-eye text-dark fs-5"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gráfico + Atividades -->
+        <div class="row g-4">
+          
+          <!-- Gráfico (Placeholder com Bootstrap) -->
+          <div class="col-lg-8">
+            <div class="card border-0 shadow-sm">
+              <div class="card-header bg-white border-0 py-3">
+                <h5 class="fw-bold mb-0">📈 Tráfego nos Últimos 7 Dias</h5>
+              </div>
+              <div class="card-body">
+                <!-- Placeholder visual com barras Bootstrap -->
+                <div class="d-flex align-items-end justify-content-around h-100" style="min-height: 200px;">
+                  <div class="text-center">
+                    <div class="bg-success bg-gradient rounded-top" style="width: 40px; height: 120px;"></div>
+                    <small class="text-muted d-block mt-2">Seg</small>
+                  </div>
+                  <div class="text-center">
+                    <div class="bg-success bg-gradient rounded-top" style="width: 40px; height: 160px;"></div>
+                    <small class="text-muted d-block mt-2">Ter</small>
+                  </div>
+                  <div class="text-center">
+                    <div class="bg-success bg-gradient rounded-top" style="width: 40px; height: 90px;"></div>
+                    <small class="text-muted d-block mt-2">Qua</small>
+                  </div>
+                  <div class="text-center">
+                    <div class="bg-success bg-gradient rounded-top" style="width: 40px; height: 200px;"></div>
+                    <small class="text-muted d-block mt-2">Qui</small>
+                  </div>
+                  <div class="text-center">
+                    <div class="bg-success bg-gradient rounded-top" style="width: 40px; height: 140px;"></div>
+                    <small class="text-muted d-block mt-2">Sex</small>
+                  </div>
+                  <div class="text-center">
+                    <div class="bg-success bg-gradient rounded-top opacity-75" style="width: 40px; height: 60px;"></div>
+                    <small class="text-muted d-block mt-2">Sáb</small>
+                  </div>
+                  <div class="text-center">
+                    <div class="bg-success bg-gradient rounded-top opacity-75" style="width: 40px; height: 40px;"></div>
+                    <small class="text-muted d-block mt-2">Dom</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Atividades Recentes -->
+          <div class="col-lg-4">
+            <div class="card border-0 shadow-sm">
+              <div class="card-header bg-white border-0 py-3">
+                <h5 class="fw-bold mb-0">🔔 Atividades Recentes</h5>
+              </div>
+              <div class="card-body p-0">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex gap-3">
+                    <div class="bg-info bg-gradient rounded-circle flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                      <i class="bi bi-journal-plus text-white small"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                      <p class="mb-0 small"><strong>Novo artigo</strong> publicado: "Bootstrap 5 Avançado"</p>
+                      <small class="text-muted">há 2 horas</small>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex gap-3">
+                    <div class="bg-success bg-gradient rounded-circle flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                      <i class="bi bi-person-plus text-white small"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                      <p class="mb-0 small"><strong>Novo usuário</strong> registrado: ana@email.com</p>
+                      <small class="text-muted">há 5 horas</small>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex gap-3">
+                    <div class="bg-warning bg-gradient rounded-circle flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                      <i class="bi bi-chat text-dark small"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                      <p class="mb-0 small"><strong>5 novos comentários</strong> aguardando moderação</p>
+                      <small class="text-muted">há 1 dia</small>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex gap-3">
+                    <div class="bg-danger bg-gradient rounded-circle flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                      <i class="bi bi-exclamation-triangle text-white small"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                      <p class="mb-0 small"><strong>Alerta:</strong> Backup diário falhou</p>
+                      <small class="text-muted">há 2 dias</small>
+                    </div>
+                  </li>
+                </ul>
+                <div class="p-3">
+                  <a href="#" class="btn btn-outline-success btn-sm w-100">Ver Todas</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tabela: Artigos Recentes -->
+        <div class="card border-0 shadow-sm mt-4">
+          <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center">
+            <h5 class="fw-bold mb-0">📰 Artigos Recentes</h5>
+            <a href="dash-articles.html" class="btn btn-sm btn-outline-success">Gerenciar</a>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead class="bg-light">
+                <tr>
+                  <th class="ps-4">Título</th>
+                  <th>Categoria</th>
+                  <th>Autor</th>
+                  <th>Data</th>
+                  <th>Status</th>
+                  <th class="text-end pe-4">Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="ps-4 fw-medium">Como criar dashboards com Bootstrap</td>
+                  <td><span class="badge bg-info bg-gradient">Tutorial</span></td>
+                  <td>Maria Silva</td>
+                  <td>18 Mai, 2024</td>
+                  <td><span class="badge bg-success bg-gradient">Publicado</span></td>
+                  <td class="text-end pe-4">
+                    <a href="dash-insert-article.html" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a>
+                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="ps-4 fw-medium">IA no desenvolvimento web</td>
+                  <td><span class="badge bg-primary bg-gradient">IA</span></td>
+                  <td>João Santos</td>
+                  <td>15 Mai, 2024</td>
+                  <td><span class="badge bg-success bg-gradient">Publicado</span></td>
+                  <td class="text-end pe-4">
+                    <a href="dash-insert-article.html" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a>
+                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="ps-4 fw-medium">Segurança em APIs REST</td>
+                  <td><span class="badge bg-danger bg-gradient">Segurança</span></td>
+                  <td>Ana Costa</td>
+                  <td>12 Mai, 2024</td>
+                  <td><span class="badge bg-warning bg-gradient text-dark">Rascunho</span></td>
+                  <td class="text-end pe-4">
+                    <a href="dash-insert-article.html" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a>
+                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Script para toggle da sidebar no mobile -->
+  <script>
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const toggleBtn = document.getElementById('sidebarToggle');
+    
+    function toggleSidebar() {
+      sidebar.classList.toggle('show');
+      overlay.classList.toggle('show');
+    }
+    
+    toggleBtn?.addEventListener('click', toggleSidebar);
+    overlay?.addEventListener('click', toggleSidebar);
+  </script>
+</body>
+</html>
