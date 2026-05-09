@@ -1,0 +1,122 @@
+<!-- {{TITLE}} = "Novo Artigo" | {{ACTIVE_INSERT_ARTICLE}} = "active bg-white text-success fw-medium" -->
+
+<div class="p-4 p-lg-5">
+  <div class="mb-4">
+    <h2 class="fw-bold mb-1 text-dark">✍️ {{EDIT_MODE ? 'Editar' : 'Novo'}} Artigo</h2>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="dash-home.html" class="text-decoration-none text-muted">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="dash-articles.html" class="text-decoration-none text-muted">Artigos</a></li>
+        <li class="breadcrumb-item active text-success">{{EDIT_MODE ? 'Editar' : 'Novo'}}</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-4 p-lg-5">
+          <form>
+            <!-- Título -->
+            <div class="mb-4">
+              <label class="form-label fw-medium text-dark">Título *</label>
+              <input type="text" class="form-control form-control-lg" placeholder="Digite o título do artigo" required>
+            </div>
+
+            <!-- Slug -->
+            <div class="mb-4">
+              <label class="form-label fw-medium text-dark">Slug (URL)</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light">blogtech.com/artigo/</span>
+                <input type="text" class="form-control" placeholder="como-criar-dashboards" pattern="[a-z0-9\-]+">
+              </div>
+            </div>
+
+            <!-- Categoria -->
+            <div class="mb-4">
+              <label class="form-label fw-medium text-dark">Categoria *</label>
+              <select class="form-select" required>
+                <option value="">Selecione...</option>
+                <option>Tutoriais</option>
+                <option>Inteligência Artificial</option>
+                <option>DevOps</option>
+                <option>Segurança</option>
+              </select>
+            </div>
+
+            <!-- Conteúdo -->
+            <div class="mb-4">
+              <label class="form-label fw-medium text-dark">Conteúdo *</label>
+              <textarea class="form-control" rows="10" placeholder="Escreva o conteúdo do artigo..." required></textarea>
+              <div class="form-text">Use Markdown ou HTML para formatação.</div>
+            </div>
+
+            <!-- Imagem Destaque -->
+            <div class="mb-4">
+              <label class="form-label fw-medium text-dark">Imagem Destaque</label>
+              <input type="file" class="form-control" accept="image/*">
+            </div>
+
+            <!-- Status e Aprovação -->
+            <div class="mb-4 p-3 bg-success-subtle rounded">
+              <label class="form-label fw-medium text-dark mb-3">Status do Artigo</label>
+              <div class="d-flex flex-wrap gap-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="status" id="draft" checked>
+                  <label class="form-check-label text-dark" for="draft">📝 Rascunho</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="status" id="pending">
+                  <label class="form-check-label text-dark" for="pending">⏳ Aguardando Aprovação</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="status" id="published">
+                  <label class="form-check-label text-dark" for="published">✅ Publicado</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ações de Aprovação (✅/❌) -->
+            <div class="mb-4 p-3 border rounded">
+              <label class="form-label fw-medium text-dark mb-3">Aprovação do Artigo</label>
+              <div class="d-flex gap-3">
+                <button type="button" class="btn btn-success" title="Aprovar artigo">
+                  <i class="bi bi-check-circle-fill me-2"></i>Aprovar
+                </button>
+                <button type="button" class="btn btn-outline-danger" title="Rejeitar artigo">
+                  <i class="bi bi-x-circle-fill me-2"></i>Rejeitar
+                </button>
+              </div>
+              <div class="form-text mt-2">Aprovar publica o artigo imediatamente. Rejeitar envia de volta para rascunho.</div>
+            </div>
+
+            <!-- Botões -->
+            <div class="d-flex gap-3">
+              <button type="submit" class="btn btn-success btn-lg px-4">
+                <i class="bi bi-check-lg me-2"></i>Salvar Artigo
+              </button>
+              <a href="dash-articles.html" class="btn btn-outline-secondary btn-lg px-4">Cancelar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar de Ajuda -->
+    <div class="col-lg-4">
+      <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-white border-0 py-3">
+          <h6 class="fw-bold mb-0 text-dark">💡 Dicas de Redação</h6>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled small text-muted mb-0">
+            <li class="mb-2">• Títulos com até 60 caracteres performam melhor</li>
+            <li class="mb-2">• Use subtítulos a cada 300 palavras</li>
+            <li class="mb-2">• Inclua imagens para aumentar engajamento</li>
+            <li>• Revise ortografia antes de publicar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
