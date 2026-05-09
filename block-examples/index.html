@@ -3,428 +3,461 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Block Examples - Componentes Reutilizáveis</title>
+  <title>Block Examples — Galeria</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .block-card:hover .card { box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.15)!important; transform: translateY(-2px); }
+    .block-card .card { transition: box-shadow .2s, transform .2s; }
+    .block-num { font-size:.65rem; font-weight:700; color:#6c757d; letter-spacing:.06em; }
+  </style>
 </head>
-<body>
+<body class="bg-light">
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <div class="container-xxl">
-      <a class="navbar-brand fw-bold" href="#">
-        <i class="bi bi-layers me-2"></i>Block Examples
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container-xl">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-grid-3x3-gap-fill me-2 text-primary"></i>Block Examples
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#hero">Hero</a></li>
-          <li class="nav-item"><a class="nav-link" href="#cards">Cards</a></li>
-          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-          <li class="nav-item"><a class="nav-link" href="#testimonials">Depoimentos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#pricing">Preços</a></li>
-          <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-          <li class="nav-item"><a class="nav-link" href="#gallery">Galeria</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
-        </ul>
-      </div>
+      <span class="text-white-50 small">35 blocos de layout para notícias e blogs</span>
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="py-5 bg-gradient bg-primary text-white">
-    <div class="container-xxl">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <h1 class="display-4 fw-bold mb-3">Componentes com Bootstrap Puro</h1>
-          <p class="lead mb-4">Uma coleção de blocos reutilizáveis construídos exclusivamente com Bootstrap, sem CSS customizado.</p>
-          <div class="d-flex gap-2">
-            <button class="btn btn-light btn-lg">Começar</button>
-            <button class="btn btn-outline-light btn-lg">Conhecer Mais</button>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <img src="https://picsum.photos/500/400?random=1" alt="Hero" class="img-fluid rounded-4 shadow">
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="container-xl py-5">
 
-  <!-- CARDS SECTION -->
-  <section id="cards" class="py-5 bg-light">
-    <div class="container-xxl">
-      <h2 class="text-center fw-bold mb-5">📦 Cards Variados</h2>
-      <div class="row g-4">
-        <!-- Card 1 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow h-100">
-            <img src="https://picsum.photos/400/250?random=2" alt="Card" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Card com Imagem</h5>
-              <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-              <a href="#" class="btn btn-primary btn-sm">Saiba Mais</a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 2 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow h-100 text-center">
-            <div class="card-body">
-              <i class="bi bi-lightning-charge text-warning display-4"></i>
-              <h5 class="card-title mt-3">Card com Ícone</h5>
-              <p class="card-text text-muted">Construído com Bootstrap Icons para máxima compatibilidade.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow h-100 bg-success-subtle">
-            <div class="card-body">
-              <badge class="badge bg-success mb-2">Destaque</badge>
-              <h5 class="card-title">Card Colorido</h5>
-              <p class="card-text">Tons bootstrap para rápida customização visual.</p>
-              <button class="btn btn-success btn-sm">Explorar</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="mb-5">
+      <h1 class="fw-bolder mb-1">Galeria de Blocos</h1>
+      <p class="text-muted">Layouts de news/blog construídos com Bootstrap 5 — clique para visualizar cada bloco.</p>
     </div>
-  </section>
 
-  <!-- FEATURES SECTION -->
-  <section id="features" class="py-5">
-    <div class="container-xxl">
-      <h2 class="text-center fw-bold mb-5">✨ Recursos Principais</h2>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-          <div class="text-center">
-            <div class="bg-primary bg-gradient rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-              <i class="bi bi-code-square text-white fs-4"></i>
-            </div>
-            <h5 class="fw-bold">Código Limpo</h5>
-            <p class="text-muted small">Apenas HTML, CSS Bootstrap e ícones SVG.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="text-center">
-            <div class="bg-success bg-gradient rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-              <i class="bi bi-phone text-white fs-4"></i>
-            </div>
-            <h5 class="fw-bold">Responsivo</h5>
-            <p class="text-muted small">Mobile-first, perfeito em todos os tamanhos.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="text-center">
-            <div class="bg-warning bg-gradient rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-              <i class="bi bi-palette text-dark fs-4"></i>
-            </div>
-            <h5 class="fw-bold">Customizável</h5>
-            <p class="text-muted small">Altere cores com classes Bootstrap.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="text-center">
-            <div class="bg-danger bg-gradient rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-              <i class="bi bi-lightning-charge text-white fs-4"></i>
-            </div>
-            <h5 class="fw-bold">Rápido</h5>
-            <p class="text-muted small">Sem dependências, apenas CDN.</p>
+    <div class="row g-4">
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="01-hero.png" class="card-img-top object-fit-cover" style="height:180px;" alt="01">
+          <div class="card-body">
+            <p class="block-num mb-1">01</p>
+            <h6 class="fw-bold mb-1">Featured Split</h6>
+            <p class="card-text text-muted small mb-3">Destaque + 3 artigos empilhados + full-width inferior (SiliconAngle)</p>
+            <a href="01-featured-split.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
           </div>
         </div>
       </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="02-hero-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="02">
+          <div class="card-body">
+            <p class="block-num mb-1">02</p>
+            <h6 class="fw-bold mb-1">News Hlist</h6>
+            <p class="card-text text-muted small mb-3">Lista horizontal com thumbnails, badge de categoria e "Ver Mais"</p>
+            <a href="02-news-hlist.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="03-cards.png" class="card-img-top object-fit-cover" style="height:180px;" alt="03">
+          <div class="card-body">
+            <p class="block-num mb-1">03</p>
+            <h6 class="fw-bold mb-1">Featured Sidebar</h6>
+            <p class="card-text text-muted small mb-3">Artigo destaque grande à esquerda + lista de artigos à direita</p>
+            <a href="03-featured-sidebar.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="04-cards-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="04">
+          <div class="card-body">
+            <p class="block-num mb-1">04</p>
+            <h6 class="fw-bold mb-1">Events List</h6>
+            <p class="card-text text-muted small mb-3">Lista de eventos com thumbnail pequeno e data (SiliconAngle)</p>
+            <a href="04-events-list.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="05-cards-image.png" class="card-img-top object-fit-cover" style="height:180px;" alt="05">
+          <div class="card-body">
+            <p class="block-num mb-1">05</p>
+            <h6 class="fw-bold mb-1">Article Thumbnails</h6>
+            <p class="card-text text-muted small mb-3">Lista de artigos com thumbnail, badge de categoria, autor e hora</p>
+            <a href="05-article-thumbnails.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="06-features.png" class="card-img-top object-fit-cover" style="height:180px;" alt="06">
+          <div class="card-body">
+            <p class="block-num mb-1">06</p>
+            <h6 class="fw-bold mb-1">Deep Dives</h6>
+            <p class="card-text text-muted small mb-3">Grid 2×2 de cards com imagem e overlay de categoria/título</p>
+            <a href="06-deep-dives.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="07-features-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="07">
+          <div class="card-body">
+            <p class="block-num mb-1">07</p>
+            <h6 class="fw-bold mb-1">Hero Mosaic</h6>
+            <p class="card-text text-muted small mb-3">1 artigo destaque grande + grade 2×2 de artigos menores</p>
+            <a href="07-hero-mosaic.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="08-testimonials.png" class="card-img-top object-fit-cover" style="height:180px;" alt="08">
+          <div class="card-body">
+            <p class="block-num mb-1">08</p>
+            <h6 class="fw-bold mb-1">Stories 3 Col</h6>
+            <p class="card-text text-muted small mb-3">3 cards com imagem, categoria, título, resumo e "Leia Mais"</p>
+            <a href="08-stories-3col.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="09-testimonials-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="09">
+          <div class="card-body">
+            <p class="block-num mb-1">09</p>
+            <h6 class="fw-bold mb-1">Latest News</h6>
+            <p class="card-text text-muted small mb-3">Lista com thumbnail + badge verde + título + autor/hora (The Verge)</p>
+            <a href="09-latest-news.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="10-pricing.png" class="card-img-top object-fit-cover" style="height:180px;" alt="10">
+          <div class="card-body">
+            <p class="block-num mb-1">10</p>
+            <h6 class="fw-bold mb-1">Brief List</h6>
+            <p class="card-text text-muted small mb-3">Seção "Em Breve" — lista compacta estilo The Verge com badge verde</p>
+            <a href="10-brief-list.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="11-pricing-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="11">
+          <div class="card-body">
+            <p class="block-num mb-1">11</p>
+            <h6 class="fw-bold mb-1">Podcast Cards</h6>
+            <p class="card-text text-muted small mb-3">3 cards de podcast com artwork, título, descrição e contagem (TechCrunch)</p>
+            <a href="11-podcast-cards.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="12-team.png" class="card-img-top object-fit-cover" style="height:180px;" alt="12">
+          <div class="card-body">
+            <p class="block-num mb-1">12</p>
+            <h6 class="fw-bold mb-1">Review Grid</h6>
+            <p class="card-text text-muted small mb-3">Grade 2×2 de cards com imagem full-width e título sobreposto</p>
+            <a href="12-review-grid.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="13-team-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="13">
+          <div class="card-body">
+            <p class="block-num mb-1">13</p>
+            <h6 class="fw-bold mb-1">Split Columns</h6>
+            <p class="card-text text-muted small mb-3">2 colunas: destaque + itens com imagem à direita / lista de 7 artigos</p>
+            <a href="13-split-columns.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="14-gallery.png" class="card-img-top object-fit-cover" style="height:180px;" alt="14">
+          <div class="card-body">
+            <p class="block-num mb-1">14</p>
+            <h6 class="fw-bold mb-1">Editorial Feature</h6>
+            <p class="card-text text-muted small mb-3">Destaque grande + grade 2×2 lateral de artigos secundários (Wired)</p>
+            <a href="14-editorial-feature.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="15-gallery-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="15">
+          <div class="card-body">
+            <p class="block-num mb-1">15</p>
+            <h6 class="fw-bold mb-1">List Feature</h6>
+            <p class="card-text text-muted small mb-3">Lista de artigos com avatares à esquerda + artigo destaque à direita (Ars)</p>
+            <a href="15-list-feature.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="16-contact.png" class="card-img-top object-fit-cover" style="height:180px;" alt="16">
+          <div class="card-body">
+            <p class="block-num mb-1">16</p>
+            <h6 class="fw-bold mb-1">Hero Sidebar</h6>
+            <p class="card-text text-muted small mb-3">Imagem hero grande com overlay + 2 artigos em coluna lateral</p>
+            <a href="16-hero-sidebar.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="17-contact-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="17">
+          <div class="card-body">
+            <p class="block-num mb-1">17</p>
+            <h6 class="fw-bold mb-1">Latest Stories</h6>
+            <p class="card-text text-muted small mb-3">Lista de artigos com imagem, badge, título, resumo e autor (MacWorld)</p>
+            <a href="17-latest-stories.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="18-navbar.png" class="card-img-top object-fit-cover" style="height:180px;" alt="18">
+          <div class="card-body">
+            <p class="block-num mb-1">18</p>
+            <h6 class="fw-bold mb-1">Tabbed News</h6>
+            <p class="card-text text-muted small mb-3">Abas de categoria + lista de artigos com thumbnail abaixo (The Verge)</p>
+            <a href="18-tabbed-news.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="19-navbar-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="19">
+          <div class="card-body">
+            <p class="block-num mb-1">19</p>
+            <h6 class="fw-bold mb-1">Overlay Grid</h6>
+            <p class="card-text text-muted small mb-3">Grade 2×3 de cards com gradient overlay e badge de categoria</p>
+            <a href="19-overlay-grid.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="20-footer.png" class="card-img-top object-fit-cover" style="height:180px;" alt="20">
+          <div class="card-body">
+            <p class="block-num mb-1">20</p>
+            <h6 class="fw-bold mb-1">Topic Tabs</h6>
+            <p class="card-text text-muted small mb-3">Filtros de tópico + cards de artigos por categoria selecionada</p>
+            <a href="20-topic-tabs.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="21-footer-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="21">
+          <div class="card-body">
+            <p class="block-num mb-1">21</p>
+            <h6 class="fw-bold mb-1">Article Stream</h6>
+            <p class="card-text text-muted small mb-3">Lista de artigos com imagem grande, badge, título e resumo</p>
+            <a href="21-article-stream.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="22-buttons.png" class="card-img-top object-fit-cover" style="height:180px;" alt="22">
+          <div class="card-body">
+            <p class="block-num mb-1">22</p>
+            <h6 class="fw-bold mb-1">Feature List</h6>
+            <p class="card-text text-muted small mb-3">Feature grande à esquerda + lista de artigos com tags à direita</p>
+            <a href="22-feature-list.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="23-buttons-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="23">
+          <div class="card-body">
+            <p class="block-num mb-1">23</p>
+            <h6 class="fw-bold mb-1">Multi Section</h6>
+            <p class="card-text text-muted small mb-3">Múltiplas seções: Notícias em linha + Reviews + Ofertas</p>
+            <a href="23-multi-section.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="24-badges.png" class="card-img-top object-fit-cover" style="height:180px;" alt="24">
+          <div class="card-body">
+            <p class="block-num mb-1">24</p>
+            <h6 class="fw-bold mb-1">Topic Spotlight</h6>
+            <p class="card-text text-muted small mb-3">Destaque principal + "Tópicos em Destaque da Semana" na sidebar</p>
+            <a href="24-topic-spotlight.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="25-badges-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="25">
+          <div class="card-body">
+            <p class="block-num mb-1">25</p>
+            <h6 class="fw-bold mb-1">Lead Sidebar</h6>
+            <p class="card-text text-muted small mb-3">Artigo principal grande + 4 artigos menores em sidebar vertical</p>
+            <a href="25-lead-sidebar.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="26-alerts.png" class="card-img-top object-fit-cover" style="height:180px;" alt="26">
+          <div class="card-body">
+            <p class="block-num mb-1">26</p>
+            <h6 class="fw-bold mb-1">Dark Grid</h6>
+            <p class="card-text text-muted small mb-3">Grade 4 colunas com fundo escuro, imagens e badges de categoria</p>
+            <a href="26-dark-grid.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="27-alerts-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="27">
+          <div class="card-body">
+            <p class="block-num mb-1">27</p>
+            <h6 class="fw-bold mb-1">Article Cards</h6>
+            <p class="card-text text-muted small mb-3">3 artigos com imagem grande, badge, título, resumo e tags (MacWorld)</p>
+            <a href="27-article-cards.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="28-forms.png" class="card-img-top object-fit-cover" style="height:180px;" alt="28">
+          <div class="card-body">
+            <p class="block-num mb-1">28</p>
+            <h6 class="fw-bold mb-1">Mosaic Grid</h6>
+            <p class="card-text text-muted small mb-3">Artigo grande à esquerda + grade 2×2 de thumbnails à direita</p>
+            <a href="28-mosaic-grid.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="29-forms-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="29">
+          <div class="card-body">
+            <p class="block-num mb-1">29</p>
+            <h6 class="fw-bold mb-1">Article Featured</h6>
+            <p class="card-text text-muted small mb-3">Artigo principal + sidebar "Em Destaque" com 4 artigos menores</p>
+            <a href="29-article-featured.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="30-tables.png" class="card-img-top object-fit-cover" style="height:180px;" alt="30">
+          <div class="card-body">
+            <p class="block-num mb-1">30</p>
+            <h6 class="fw-bold mb-1">Compact Stream</h6>
+            <p class="card-text text-muted small mb-3">Lista de artigos com thumbnail + avatar do autor + nome + data</p>
+            <a href="30-compact-stream.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="31-tables-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="31">
+          <div class="card-body">
+            <p class="block-num mb-1">31</p>
+            <h6 class="fw-bold mb-1">Featured Trio</h6>
+            <p class="card-text text-muted small mb-3">Destaque grande à esquerda + 3 artigos empilhados à direita</p>
+            <a href="31-featured-trio.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="32-modals.png" class="card-img-top object-fit-cover" style="height:180px;" alt="32">
+          <div class="card-body">
+            <p class="block-num mb-1">32</p>
+            <h6 class="fw-bold mb-1">Wide Sidebar</h6>
+            <p class="card-text text-muted small mb-3">Artigo principal col-8 + sidebar col-4 com lista de artigos menores</p>
+            <a href="32-wide-sidebar.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="33-modals-alt.png" class="card-img-top object-fit-cover" style="height:180px;" alt="33">
+          <div class="card-body">
+            <p class="block-num mb-1">33</p>
+            <h6 class="fw-bold mb-1">Dark Section</h6>
+            <p class="card-text text-muted small mb-3">Seção com tema escuro — destaque + sidebar de artigos relacionados</p>
+            <a href="33-dark-section.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="34-breadcrumb.png" class="card-img-top object-fit-cover" style="height:180px;" alt="34">
+          <div class="card-body">
+            <p class="block-num mb-1">34</p>
+            <h6 class="fw-bold mb-1">Product Feature</h6>
+            <p class="card-text text-muted small mb-3">Header colorido "Best Gadgets" + artigo principal + 4 cards de produto</p>
+            <a href="34-product-feature.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 block-card">
+        <div class="card border-0 shadow-sm h-100">
+          <img src="35-cards-grid.png" class="card-img-top object-fit-cover" style="height:180px;" alt="35">
+          <div class="card-body">
+            <p class="block-num mb-1">35</p>
+            <h6 class="fw-bold mb-1">Hero Carousel</h6>
+            <p class="card-text text-muted small mb-3">Hero full-width com imagem panorâmica, overlay escuro e controles</p>
+            <a href="35-hero-carousel.html" class="btn btn-outline-primary btn-sm w-100">Ver Bloco</a>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
 
-  <!-- TESTIMONIALS SECTION -->
-  <section id="testimonials" class="py-5 bg-light">
-    <div class="container-xxl">
-      <h2 class="text-center fw-bold mb-5">💬 O que Dizem Sobre</h2>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow">
-            <div class="card-body">
-              <div class="d-flex gap-2 mb-3">
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-              </div>
-              <p class="card-text mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid.</p>
-              <div class="d-flex align-items-center gap-3">
-                <img src="https://picsum.photos/50/50?random=3" alt="Avatar" class="rounded-circle" width="50">
-                <div>
-                  <strong class="d-block">João Silva</strong>
-                  <small class="text-muted">Designer</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow">
-            <div class="card-body">
-              <div class="d-flex gap-2 mb-3">
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-              </div>
-              <p class="card-text mb-3">Excelente qualidade! Recomendo para todos seus projetos Bootstrap.</p>
-              <div class="d-flex align-items-center gap-3">
-                <img src="https://picsum.photos/50/50?random=4" alt="Avatar" class="rounded-circle" width="50">
-                <div>
-                  <strong class="d-block">Maria Santos</strong>
-                  <small class="text-muted">Desenvolvedora</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow">
-            <div class="card-body">
-              <div class="d-flex gap-2 mb-3">
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-muted"></i>
-              </div>
-              <p class="card-text mb-3">Muito útil! Economizei muito tempo com esses blocos prontos.</p>
-              <div class="d-flex align-items-center gap-3">
-                <img src="https://picsum.photos/50/50?random=5" alt="Avatar" class="rounded-circle" width="50">
-                <div>
-                  <strong class="d-block">Pedro Costa</strong>
-                  <small class="text-muted">Freelancer</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING SECTION -->
-  <section id="pricing" class="py-5">
-    <div class="container-xxl">
-      <h2 class="text-center fw-bold mb-5">💰 Tabela de Preços</h2>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow">
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Starter</h5>
-              <h2 class="display-5 text-primary fw-bold my-3">R$29</h2>
-              <p class="text-muted mb-4">por mês</p>
-              <ul class="list-unstyled mb-4 small">
-                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>5 Projetos</li>
-                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Suporte Email</li>
-                <li class="mb-2"><i class="bi bi-x-circle text-danger me-2"></i>API Acesso</li>
-              </ul>
-              <button class="btn btn-outline-primary w-100">Escolher Plano</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow border-primary border-2">
-            <div class="position-absolute top-0 start-50 translate-middle">
-              <span class="badge bg-primary">Popular</span>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold mt-3">Professional</h5>
-              <h2 class="display-5 text-primary fw-bold my-3">R$79</h2>
-              <p class="text-muted mb-4">por mês</p>
-              <ul class="list-unstyled mb-4 small">
-                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Projetos Ilimitados</li>
-                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Suporte Prioritário</li>
-                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>API Acesso</li>
-              </ul>
-              <button class="btn btn-primary w-100">Escolher Plano</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow">
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Enterprise</h5>
-              <h2 class="display-5 text-primary fw-bold my-3">Custom</h2>
-              <p class="text-muted mb-4">solução personalizada</p>
-              <ul class="list-unstyled mb-4 small">
-                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Tudo Incluído</li>
-                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Suporte 24/7</li>
-                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>SLA Garantido</li>
-              </ul>
-              <button class="btn btn-outline-primary w-100">Fale Conosco</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEAM SECTION -->
-  <section id="team" class="py-5 bg-light">
-    <div class="container-xxl">
-      <h2 class="text-center fw-bold mb-5">👥 Nosso Time</h2>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-          <div class="text-center">
-            <img src="https://picsum.photos/200/200?random=6" alt="Team" class="rounded-circle mb-3 img-fluid" style="max-width: 150px;">
-            <h5 class="fw-bold">Ana Silva</h5>
-            <p class="text-muted small mb-3">Diretora de Design</p>
-            <div class="d-flex justify-content-center gap-2">
-              <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-linkedin"></i></a>
-              <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-github"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="text-center">
-            <img src="https://picsum.photos/200/200?random=7" alt="Team" class="rounded-circle mb-3 img-fluid" style="max-width: 150px;">
-            <h5 class="fw-bold">Carlos Santos</h5>
-            <p class="text-muted small mb-3">Dev Frontend</p>
-            <div class="d-flex justify-content-center gap-2">
-              <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-linkedin"></i></a>
-              <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-github"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="text-center">
-            <img src="https://picsum.photos/200/200?random=8" alt="Team" class="rounded-circle mb-3 img-fluid" style="max-width: 150px;">
-            <h5 class="fw-bold">Julia Costa</h5>
-            <p class="text-muted small mb-3">Dev Backend</p>
-            <div class="d-flex justify-content-center gap-2">
-              <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-linkedin"></i></a>
-              <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-github"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="text-center">
-            <img src="https://picsum.photos/200/200?random=9" alt="Team" class="rounded-circle mb-3 img-fluid" style="max-width: 150px;">
-            <h5 class="fw-bold">Marco Silva</h5>
-            <p class="text-muted small mb-3">DevOps</p>
-            <div class="d-flex justify-content-center gap-2">
-              <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-linkedin"></i></a>
-              <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-github"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY SECTION -->
-  <section id="gallery" class="py-5">
-    <div class="container-xxl">
-      <h2 class="text-center fw-bold mb-5">🖼️ Galeria</h2>
-      <div class="row g-3">
-        <div class="col-md-6 col-lg-4">
-          <img src="https://picsum.photos/400/300?random=10" alt="Gallery" class="img-fluid rounded shadow">
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <img src="https://picsum.photos/400/300?random=11" alt="Gallery" class="img-fluid rounded shadow">
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <img src="https://picsum.photos/400/300?random=12" alt="Gallery" class="img-fluid rounded shadow">
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <img src="https://picsum.photos/400/300?random=13" alt="Gallery" class="img-fluid rounded shadow">
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <img src="https://picsum.photos/400/300?random=14" alt="Gallery" class="img-fluid rounded shadow">
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <img src="https://picsum.photos/400/300?random=15" alt="Gallery" class="img-fluid rounded shadow">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="py-5 bg-light">
-    <div class="container-xxl">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2 class="text-center fw-bold mb-5">📧 Entre em Contato</h2>
-          <form>
-            <div class="mb-3">
-              <label class="form-label fw-bold">Nome Completo</label>
-              <input type="text" class="form-control form-control-lg" placeholder="Seu nome">
-            </div>
-            <div class="mb-3">
-              <label class="form-label fw-bold">Email</label>
-              <input type="email" class="form-control form-control-lg" placeholder="seu@email.com">
-            </div>
-            <div class="mb-3">
-              <label class="form-label fw-bold">Assunto</label>
-              <input type="text" class="form-control form-control-lg" placeholder="Qual o assunto?">
-            </div>
-            <div class="mb-3">
-              <label class="form-label fw-bold">Mensagem</label>
-              <textarea class="form-control form-control-lg" rows="5" placeholder="Sua mensagem..."></textarea>
-            </div>
-            <div class="d-grid gap-2">
-              <button type="submit" class="btn btn-primary btn-lg">
-                <i class="bi bi-send me-2"></i>Enviar Mensagem
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-dark text-white py-5">
-    <div class="container-xxl">
-      <div class="row g-4 mb-4">
-        <div class="col-md-6 col-lg-3">
-          <h5 class="fw-bold mb-3">Block Examples</h5>
-          <p class="text-muted small">Componentes reutilizáveis com Bootstrap. Construa seu site rapidamente.</p>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <h6 class="fw-bold mb-3">Links</h6>
-          <ul class="list-unstyled small">
-            <li><a href="#" class="text-muted text-decoration-none">Documentação</a></li>
-            <li><a href="#" class="text-muted text-decoration-none">Exemplos</a></li>
-            <li><a href="#" class="text-muted text-decoration-none">Bootstrap</a></li>
-            <li><a href="#" class="text-muted text-decoration-none">Comunidade</a></li>
-          </ul>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <h6 class="fw-bold mb-3">Legais</h6>
-          <ul class="list-unstyled small">
-            <li><a href="#" class="text-muted text-decoration-none">Política</a></li>
-            <li><a href="#" class="text-muted text-decoration-none">Termos</a></li>
-            <li><a href="#" class="text-muted text-decoration-none">Cookies</a></li>
-            <li><a href="#" class="text-muted text-decoration-none">Privacidade</a></li>
-          </ul>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <h6 class="fw-bold mb-3">Social</h6>
-          <div class="d-flex gap-2">
-            <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-github"></i></a>
-            <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-      </div>
-      <hr class="text-muted">
-      <div class="text-center text-muted small">
-        <p>&copy; 2024 Block Examples. Construído com Bootstrap 5. Todos os direitos reservados.</p>
-      </div>
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container-xl text-center">
+      <p class="mb-0 small text-white-50">Block Examples — 35 layouts de news/blog com Bootstrap 5.3</p>
     </div>
   </footer>
 
